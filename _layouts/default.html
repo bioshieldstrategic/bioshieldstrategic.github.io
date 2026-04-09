@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "BioShield Strategic" }}</title>
+    <meta name="description" content="Especialistas em Controle de Zoonoses e Saúde Pública. Estratégias em Biossegurança.">
+    <!-- Vincula ao arquivo CSS gerado -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    
+    <!-- Tela de Carregamento (DNA Loader) -->
+    <div id="loader-container">
+        <svg class="dna-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path class="helix-path1" d="M 20 10 Q 50 50 20 90" />
+            <path class="helix-path2" d="M 80 10 Q 50 50 80 90" />
+            <line class="helix-rung" x1="26" y1="20" x2="74" y2="20" />
+            <line class="helix-rung" x1="40" y1="40" x2="60" y2="40" />
+            <line class="helix-rung" x1="40" y1="60" x2="60" y2="60" />
+            <line class="helix-rung" x1="26" y1="80" x2="74" y2="80" />
+        </svg>
+        <div class="loader-text">INICIALIZANDO</div>
+    </div>
+
+    <!-- Cabeçalho (Header) -->
+    <header class="header">
+        <div class="container">
+            <a href="{{ '/' | relative_url }}" class="brand">BioShield Strategic</a>
+            <nav class="nav-menu">
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="#artigos">Artigos</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+                <button class="lang-switch">PT | EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        {{ content }}
+    </main>
+
+    <!-- Script de controle do Loader e idioma -->
+    <script>
+        // Oculta o loader após o carregamento total da página
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loader = document.getElementById('loader-container');
+                loader.classList.add('loader-hidden');
+            }, 800); // 800ms de delay para demonstração estética
+        });
+
+        // Evento fictício para a troca de idioma
+        document.querySelector('.lang-switch').addEventListener('click', function() {
+            alert('A troca de idiomas será implementada na próxima fase.');
+        });
+    </script>
+
+</body>
+</html>
