@@ -1,0 +1,73 @@
+---
+layout: default
+title: Administração do site | BioShield Strategic
+---
+
+<section class="main-content admin-page">
+    <div class="container">
+        <div class="card admin-card" id="login-card">
+            <h2>Login</h2>
+            <p>Esta área permite editar o conteúdo de texto do site. A senha é usada apenas para proteger o acesso básico no navegador.</p>
+            <input id="admin-password" type="password" placeholder="Senha" class="admin-input">
+            <button id="admin-login" class="btn">Entrar</button>
+            <p style="margin-top: 18px; color: var(--slate-grey);">Lembrete: este sistema funciona no navegador e não substitui um serviço de edição com backend.</p>
+        </div>
+
+        <div class="card admin-card hidden" id="editor-card">
+            <h2>Editor de conteúdo</h2>
+            <form id="admin-form">
+                <div class="admin-section">
+                    <h3>Hero</h3>
+                    <label>Título</label>
+                    <input id="hero-title" class="admin-input" type="text">
+                    <label>Texto</label>
+                    <textarea id="hero-text" class="admin-textarea"></textarea>
+                </div>
+
+                <div class="admin-section">
+                    <h3>Sobre</h3>
+                    <label>Cabeçalho</label>
+                    <input id="about-heading" class="admin-input" type="text">
+                    <label>Primeiro parágrafo</label>
+                    <textarea id="about-text-1" class="admin-textarea"></textarea>
+                    <label>Segundo parágrafo</label>
+                    <textarea id="about-text-2" class="admin-textarea"></textarea>
+                </div>
+
+                <div class="admin-section">
+                    <h3>Serviços</h3>
+                    <label>Serviço 1 - título</label>
+                    <input id="service-1-title" class="admin-input" type="text">
+                    <label>Serviço 1 - descrição</label>
+                    <textarea id="service-1-text" class="admin-textarea"></textarea>
+                    <label>Serviço 2 - título</label>
+                    <input id="service-2-title" class="admin-input" type="text">
+                    <label>Serviço 2 - descrição</label>
+                    <textarea id="service-2-text" class="admin-textarea"></textarea>
+                    <label>Serviço 3 - título</label>
+                    <input id="service-3-title" class="admin-input" type="text">
+                    <label>Serviço 3 - descrição</label>
+                    <textarea id="service-3-text" class="admin-textarea"></textarea>
+                </div>
+
+                <div class="admin-section">
+                    <h3>Contato</h3>
+                    <label>Texto de contato</label>
+                    <textarea id="contact-text" class="admin-textarea"></textarea>
+                    <label>Telefone</label>
+                    <input id="contact-phone" class="admin-input" type="text">
+                    <label>Email</label>
+                    <input id="contact-email" class="admin-input" type="text">
+                </div>
+
+                <div class="admin-actions">
+                    <button type="submit" class="btn">Salvar localmente</button>
+                    <button type="button" id="admin-export" class="btn btn-secondary">Exportar como JSON</button>
+                    <input id="admin-import-file" type="file" accept=".json" class="admin-file-input">
+                </div>
+            </form>
+            <p style="margin-top: 20px; color: var(--slate-grey);">Use o botão Exportar para gerar um arquivo JSON que pode ser integrado ao repositório como um conteúdo editável. A edição de páginas estáticas atuais exige atualização do arquivo de dados ou do HTML.</p>
+        </div>
+    </div>
+</section>
+<script src="{{ '/assets/js/admin.js' | relative_url }}"></script>

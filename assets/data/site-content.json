@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Liderança Científica em Controle de Zoonoses",
+    "text": "Desenvolvemos estratégias robustas e baseadas em ciência para prevenção, monitoramento e resposta a ameaças biológicas que envolvem a interface entre pessoas, animais e meio ambiente."
+  },
+  "about": {
+    "heading": "Sobre André Madsen",
+    "paragraphs": [
+      "Especialista em animais selvagens, André une saúde animal, saúde humana e saúde ambiental por meio da abordagem One Health. Seu trabalho é focado em criadouros, animais exóticos, fauna silvestre, zoológicos, aquários e comércio de animais vivos.",
+      "Seu papel é oferecer suporte técnico a organizações que atuam em ambientes de risco sanitário, com ênfase em prevenção de zoonoses, biossegurança e preparação para surtos."
+    ]
+  },
+  "services": [
+    {
+      "title": "Prevenção de Zoonoses",
+      "text": "Identificamos e reduzimos os pontos de contato que levam à transmissão de agentes infecciosos entre animais e pessoas."
+    },
+    {
+      "title": "Biossegurança Aplicada",
+      "text": "Projetamos rotinas, fluxos e ambientes que tornam instalações de animais mais seguras e eficientes."
+    },
+    {
+      "title": "One Health Operacional",
+      "text": "Apoiamos a integração entre saúde animal, humana e ambiental para reduzir riscos em locais com interação entre espécies."
+    }
+  ],
+  "contact": {
+    "heading": "Contato",
+    "text": "Fale conosco para parcerias, consultoria e avaliação de risco em zoonoses.",
+    "phone": "+5511994249797",
+    "email": "contato@bioshieldstrategic.com.br"
+  }
+}
