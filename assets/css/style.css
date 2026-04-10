@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--pure-white);
     padding: 120px 0;
     text-align: center;
-    background-image: linear-gradient(rgba(0, 33, 71, 0.85), rgba(0, 33, 71, 0.95)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-image: linear-gradient(rgba(0, 33, 71, 0.85), rgba(0, 33, 71, 0.95)), url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
 }
@@ -233,34 +233,83 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dna-svg {
-    width: 120px;
+    width: 100px;
     height: 120px;
-    animation: spinDna 2s linear infinite;
+    animation: floatDna 2.8s ease-in-out infinite;
 }
 
-@keyframes spinDna {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.helix-path1,
+.helix-path2 {
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 160;
+    stroke-dashoffset: 0;
+    animation: dashFlow 3.6s linear infinite;
 }
 
 .helix-path1 {
     stroke: var(--deep-navy);
-    stroke-width: 4;
-    fill: none;
-    stroke-linecap: round;
 }
 
 .helix-path2 {
     stroke: var(--security-red);
-    stroke-width: 4;
-    fill: none;
-    stroke-linecap: round;
+    animation-delay: 0.9s;
 }
 
 .helix-rung {
     stroke: var(--slate-grey);
     stroke-width: 2.5;
     stroke-linecap: round;
+    opacity: 0.7;
+    animation: rungPulse 2.8s ease-in-out infinite;
+}
+
+.helix-rung:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.helix-rung:nth-of-type(2) {
+    animation-delay: 0.15s;
+}
+
+.helix-rung:nth-of-type(3) {
+    animation-delay: 0.3s;
+}
+
+.helix-rung:nth-of-type(4) {
+    animation-delay: 0.45s;
+}
+
+.helix-rung:nth-of-type(5) {
+    animation-delay: 0.6s;
+}
+
+@keyframes floatDna {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes dashFlow {
+    0% {
+        stroke-dashoffset: 160;
+    }
+    100% {
+        stroke-dashoffset: -160;
+    }
+}
+
+@keyframes rungPulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .loader-text {
