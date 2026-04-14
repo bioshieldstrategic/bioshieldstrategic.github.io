@@ -3,54 +3,47 @@ layout: default
 title: BioShield Strategic - Estratégias em Controle de Zoonoses
 ---
 
+<!-- Hero Section -->
 <section class="hero" id="home">
     <div class="container">
         <h1 id="hero-title">Liderança Científica em Controle de Zoonoses</h1>
         <p id="hero-text">Desenvolvemos estratégias robustas e baseadas em ciência para prevenção, monitoramento e resposta a ameaças biológicas que envolvem a interface entre pessoas, animais e meio ambiente.</p>
-        <a href="/#sobre" class="btn">Conheça nossos trabalhos</a>
+        <a href="/#sobre" class="btn">Conheça Nossa Abordagem</a>
     </div>
 </section>
 
-<section class="main-content" id="sobre">
-    <div class="container about-grid">
-        <div class="about-card">
-            <h2 id="about-heading">Sobre André Madsen</h2>
-            <p id="about-text-1">Especialista em animais selvagens, André une saúde animal, saúde humana e saúde ambiental por meio da abordagem One Health. Seu trabalho é focado em criadouros, animais exóticos, fauna silvestre, zoológicos, aquários e comércio de animais vivos.</p>
-            <p id="about-text-2">Seu papel é oferecer suporte técnico a organizações que atuam em ambientes de risco sanitário, com ênfase em prevenção de zoonoses, biossegurança e preparação para surtos.</p>
+<!-- Sobre Section -->
+<section id="sobre" style="background: white;">
+    <div class="container" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+            <h2 id="about-heading" style="margin-bottom: 30px;">Autoridade em Saúde Pública Transfronteiriça</h2>
+            <div style="line-height: 1.8; font-size: 18px;">
+                <p>A BioShield Strategic, sob a diretoria técnica do <strong>Dr. André Madsen</strong>, atua no epicentro da interface humano-animal-ambiente (One Health). Nossa missão é prover soluções justificáveis institucionalmente, alinhadas socialmente e economicamente viáveis para o enfrentamento de surtos e a proteção da saúde pública em nível federal e internacional.</p>
+                <p>Nossa metodologia combina inteligência epidemiológica, modelagem de dados e governança científica para garantir que organizações e governos estejam preparados para os desafios sanitários do século XXI.</p>
+            </div>
         </div>
-        <div class="about-photo">
-            <img src="{{ '/assets/images/foto-andre.jpg' | relative_url }}" alt="Foto de André Madsen">
+        <div style="flex: 0 0 350px; text-align: center;">
+            <div style="width: 350px; height: 450px; background: #eee; border-radius: 4px; border: 2px solid var(--deep-navy); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                <!-- Placeholder para a foto do André Madsen -->
+                <span style="color: var(--slate-grey); font-weight: 700;">FOTO: DR. ANDRÉ MADSEN</span>
+            </div>
         </div>
-    </div>
-
-    <div class="container services-grid">
-        <article class="service-card">
-            <h3 id="service-1-title">Prevenção de Zoonoses</h3>
-            <p id="service-1-text">Identificamos e reduzimos os pontos de contato que levam à transmissão de agentes infecciosos entre animais e pessoas.</p>
-        </article>
-        <article class="service-card">
-            <h3 id="service-2-title">Biossegurança Aplicada</h3>
-            <p id="service-2-text">Projetamos rotinas, fluxos e ambientes que tornam instalações de animais mais seguras e eficientes.</p>
-        </article>
-        <article class="service-card">
-            <h3 id="service-3-title">One Health Operacional</h3>
-            <p id="service-3-text">Apoiamos a integração entre saúde animal, humana e ambiental para reduzir riscos em locais com interação entre espécies.</p>
-        </article>
     </div>
 </section>
 
-<section class="articles" id="artigos">
+<!-- Artigos Section -->
+<section id="artigos">
     <div class="container">
-        <h2 style="text-align: center; margin-bottom: 20px;">Inteligência e Artigos Científicos</h2>
-        <p class="section-intro">Leituras curtas e acessíveis sobre zoonoses, biossegurança e práticas de saúde integrada.</p>
-        
-        <div id="articles-grid" class="articles-grid">
-            <div style="text-align: center; opacity: 0.5; grid-column: 1 / -1;">Carregando base de conhecimento...</div>
+        <h2 style="text-align: center; margin-bottom: 50px;">Inteligência e Artigos Científicos</h2>
+        <div id="articles-grid">
+            <!-- Carregado dinamicamente via JS do content.json -->
+            <div style="text-align: center; opacity: 0.5;">Carregando bases científicas...</div>
         </div>
     </div>
 </section>
 
-<section class="standards">
+<!-- Normas Section -->
+<section id="normas" class="standards">
     <div class="container">
         <h2 style="text-align: center; margin-bottom: 20px;">Rigor Científico e Conformidade Internacional</h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto; color: var(--slate-grey);">
@@ -61,36 +54,18 @@ title: BioShield Strategic - Estratégias em Controle de Zoonoses
             <div class="logo-item">CDC Guidelines</div>
             <div class="logo-item">WOAH Standards</div>
             <div class="logo-item">ISO 35001 (Biorisco)</div>
-            <div class="logo-item">One Health Alliance</div>
+            <div class="logo-item)One Health Alliance</div>
         </div>
     </div>
 </section>
 
-<section class="contact" id="contato">
-    <div class="container contact-top">
-        <h2 id="contact-heading">Contato e Consultoria</h2>
-        <p id="contact-text">Fale conosco para parcerias, consultoria e avaliação de risco em zoonoses. Atendemos empresas, criadouros e organizações que precisam de soluções práticas e seguras.</p>
-    </div>
-    <div class="container contact-grid">
-        <div class="contact-card contact-highlight">
-            <h3>Telefone</h3>
-            <p><a id="contact-phone-link" href="tel:+5511994249797">11 99424-9797</a></p>
-            <p>Chamada rápida para alinhamento de projetos e solicitações técnicas.</p>
-        </div>
-        <div class="contact-card contact-highlight">
-            <h3>Email</h3>
-            <p><a id="contact-email" href="mailto:contato@bioshieldstrategic.com">contato@bioshieldstrategic.com</a></p>
-            <p>Envie uma mensagem com o seu desafio e retornamos com proposta de atendimento.</p>
-        </div>
-        <div class="contact-card contact-cta">
-            <h3>Atendimento especializado</h3>
-            <p>Suporte para consultas técnicas, avaliações de biossegurança e sequência de ações.</p>
-            <button onclick="window.location.href='mailto:contato@bioshieldstrategic.com'">Enviar mensagem</button>
-        </div>
-        <div class="contact-card contact-cta">
-            <h3>Parcerias e projetos</h3>
-            <p>Estrutura simples para iniciar projetos com foco em zoonoses e controle sanitário.</p>
-            <button onclick="window.location.href='tel:+5511994249797'">Ligar agora</button>
+<!-- Contato Section -->
+<section id="contato" style="background: var(--pure-white); padding-bottom: 120px;">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 30px;">Contato e Consultoria Estratégica</h2>
+        <div style="text-align: center;">
+            <p style="font-size: 20px; font-weight: 700; color: var(--deep-navy);">Telefone: 11 99424-9797</p>
+            <p>E-mail: contato@bioshieldstrategic.com</p>
         </div>
     </div>
 </section>
