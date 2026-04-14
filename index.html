@@ -3,16 +3,14 @@ layout: default
 title: BioShield Strategic - Estratégias em Controle de Zoonoses
 ---
 
-<!-- Seção Hero Impactante -->
-<section class="hero">
+<section class="hero" id="home">
     <div class="container">
         <h1 id="hero-title">Liderança Científica em Controle de Zoonoses</h1>
         <p id="hero-text">Desenvolvemos estratégias robustas e baseadas em ciência para prevenção, monitoramento e resposta a ameaças biológicas que envolvem a interface entre pessoas, animais e meio ambiente.</p>
-        <a href="#sobre" class="btn">Conheça nossos trabalhos</a>
+        <a href="/#sobre" class="btn">Conheça nossos trabalhos</a>
     </div>
 </section>
 
-<!-- Conteúdo Informativo -->
 <section class="main-content" id="sobre">
     <div class="container about-grid">
         <div class="about-card">
@@ -43,42 +41,34 @@ title: BioShield Strategic - Estratégias em Controle de Zoonoses
 
 <section class="articles" id="artigos">
     <div class="container">
-        <h2>Artigos e Insights</h2>
+        <h2 style="text-align: center; margin-bottom: 20px;">Inteligência e Artigos Científicos</h2>
         <p class="section-intro">Leituras curtas e acessíveis sobre zoonoses, biossegurança e práticas de saúde integrada.</p>
-        <div class="articles-grid">
-            <a class="article-card" href="{{ '/artigo-zoonoses.html' | relative_url }}">
-                <h3>Entendendo as zoonoses</h3>
-                <p>Por que doenças que vêm dos animais exigem prevenção, vigilância e ação rápida.</p>
-            </a>
-            <a class="article-card" href="{{ '/artigo-biosseguranca.html' | relative_url }}">
-                <h3>Biossegurança para instalações com animais</h3>
-                <p>Como separar áreas, criar rotinas e proteger equipes e animais de riscos sanitários.</p>
-            </a>
-            <a class="article-card" href="{{ '/artigo-one-health.html' | relative_url }}">
-                <h3>One Health em prática</h3>
-                <p>Saúde animal, humana e ambiental trabalhando juntas para maior proteção e sustentabilidade.</p>
-            </a>
+        
+        <div id="articles-grid" class="articles-grid">
+            <div style="text-align: center; opacity: 0.5; grid-column: 1 / -1;">Carregando base de conhecimento...</div>
         </div>
     </div>
 </section>
 
 <section class="standards">
     <div class="container">
-        <h2>Diretrizes e Padrões Aplicados</h2>
-        <p style="text-align: center; margin-bottom: 40px; color: var(--slate-grey);">Metodologias suportadas e referenciadas em nossas operações:</p>
+        <h2 style="text-align: center; margin-bottom: 20px;">Rigor Científico e Conformidade Internacional</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto; color: var(--slate-grey);">
+            Nossas estratégias são fundamentadas nos protocolos mais rigorosos das principais autoridades globais em biossegurança e saúde pública, garantindo que as intervenções possuam <strong>mérito científico e relevância transnacional</strong>.
+        </p>
         <div class="logos-grid">
-            <div class="logo-item">OMS Guidelines</div>
-            <div class="logo-item">CDC Framework</div>
-            <div class="logo-item">OIE Protocol</div>
-            <div class="logo-item">ISO 35001</div>
-            <div class="logo-item">One Health</div>
+            <div class="logo-item">WHO Protocols</div>
+            <div class="logo-item">CDC Guidelines</div>
+            <div class="logo-item">WOAH Standards</div>
+            <div class="logo-item">ISO 35001 (Biorisco)</div>
+            <div class="logo-item">One Health Alliance</div>
         </div>
     </div>
 </section>
 
 <section class="contact" id="contato">
     <div class="container contact-top">
-        <h2 id="contact-heading">Contato</h2>
+        <h2 id="contact-heading">Contato e Consultoria</h2>
         <p id="contact-text">Fale conosco para parcerias, consultoria e avaliação de risco em zoonoses. Atendemos empresas, criadouros e organizações que precisam de soluções práticas e seguras.</p>
     </div>
     <div class="container contact-grid">
@@ -89,17 +79,17 @@ title: BioShield Strategic - Estratégias em Controle de Zoonoses
         </div>
         <div class="contact-card contact-highlight">
             <h3>Email</h3>
-            <p><a id="contact-email" href="mailto:contato@bioshieldstrategic.com.br">contato@bioshieldstrategic.com.br</a></p>
+            <p><a id="contact-email" href="mailto:contato@bioshieldstrategic.com">contato@bioshieldstrategic.com</a></p>
             <p>Envie uma mensagem com o seu desafio e retornamos com proposta de atendimento.</p>
         </div>
         <div class="contact-card contact-cta">
             <h3>Atendimento especializado</h3>
             <p>Suporte para consultas técnicas, avaliações de biossegurança e sequência de ações.</p>
-            <button onclick="window.location.href='mailto:contato@bioshieldstrategic.com.br'">Enviar mensagem</button>
+            <button onclick="window.location.href='mailto:contato@bioshieldstrategic.com'">Enviar mensagem</button>
         </div>
         <div class="contact-card contact-cta">
             <h3>Parcerias e projetos</h3>
-            <p>Estrutura simples para iniciar projetos com foco em zoonoses, One Health e controle sanitário.</p>
+            <p>Estrutura simples para iniciar projetos com foco em zoonoses e controle sanitário.</p>
             <button onclick="window.location.href='tel:+5511994249797'">Ligar agora</button>
         </div>
     </div>

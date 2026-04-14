@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: "BioShield Strategic" }}</title>
-    <meta name="description" content="Especialistas em Controle de Zoonoses e Saúde Pública. Estratégias em Biossegurança.">
-    <!-- Vincula ao arquivo CSS gerado -->
+    <meta name="description" content="Especialistas em Controle de Zoonoses e Saúde Pública (One Health).">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
     
-    <!-- Tela de Carregamento -->
     <div id="loader-container">
         <div class="dna-loader">
             <svg class="dna-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -26,40 +24,102 @@
         </div>
     </div>
 
-    <!-- Cabeçalho (Header) -->
     <header class="header">
         <div class="container">
-            <a href="{{ '/' | relative_url }}" class="brand">BioShield Strategic</a>
+            <a href="/" class="brand">BioShield Strategic</a>
             <nav class="nav-menu">
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="#artigos">Artigos</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#contato">Contato</a>
+                <a href="/#home">Home</a>
+                <a href="/#sobre">Sobre</a>
+                <a href="/#artigos">Artigos</a>
+                <a href="/#contato">Contato</a>
                 <a href="{{ '/admin.html' | relative_url }}">Admin</a>
                 <button class="lang-switch">PT | EN</button>
             </nav>
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
     <main>
         {{ content }}
     </main>
 
-    <!-- Script de controle do Loader e idioma -->
+    <div id="article-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
+
     <script>
-        // Oculta o loader após o carregamento total da página
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var loader = document.getElementById('loader-container');
-                if (loader) loader.classList.add('loader-hidden');
-            }, 1000);
+        // Oculta o loader suavemente após o carregamento
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader-container');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => loader.style.display = 'none', 500);
+                }, 1000);
+            }
         });
 
-        // Evento fictício para a troca de idioma
-        document.querySelector('.lang-switch').addEventListener('click', function() {
-            alert('A troca de idiomas será implementada na próxima fase.');
-        });
+        // Lógica do Modal de Artigos
+        const modal = document.getElementById('article-modal');
+        const modalBody = document.getElementById('modal-body-content');
+        const closeBtn = document.querySelector('.modal-close');
+
+        async function openArticle(id) {
+            try {
+                const response = await fetch('/data/content.json');
+                const data = await response.json();
+                const article = data.articles.find(a => a.id == id);
+                if (article) {
+                    modalBody.innerHTML = `
+                        <h1>${article.title}</h1>
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                        <div class="article-rich-text">${article.content}</div>
+                    `;
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            } catch (err) {
+                console.error("Error loading article:", err);
+            }
+        }
+
+        if(closeBtn) {
+            closeBtn.onclick = () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Carregamento dinâmico do Grid de Artigos na Home
+        async function loadArticlesGrid() {
+            const grid = document.getElementById('articles-grid');
+            if (!grid) return;
+
+            try {
+                const response = await fetch('/data/content.json');
+                const data = await response.json();
+                grid.innerHTML = data.articles.map(article => `
+                    <div class="card" onclick="openArticle('${article.id}')">
+                        <h2>${article.title}</h2>
+                        <p>${article.summary}</p>
+                        <span style="color: var(--deep-navy); font-weight: 700; font-size: 14px; margin-top:15px; display:inline-block;">Ler Artigo Completo &rarr;</span>
+                    </div>
+                `).join('');
+            } catch (err) {
+                console.error("Error loading grid:", err);
+            }
+        }
+
+        loadArticlesGrid();
     </script>
     <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>

@@ -1,0 +1,38 @@
+{
+  "site": {
+    "hero": {
+      "title": "Estratégia Avançada em Saúde Única (One Health)",
+      "subtitle": "Consultoria especializada em Biossegurança, Conformidade Regulatória e Controle de Zoonoses. Liderança técnica voltada à segurança sanitária global e coordenação federal de saúde pública.",
+      "buttonText": "Consulte Nosso Plano Estratégico",
+      "buttonLink": "/#sobre"
+    },
+    "about": {
+      "title": "Excelência em Governança e Inteligência Epidemiológica",
+      "content": "A BioShield Strategic, liderada pelo Dr. André Madsen, atua no epicentro da interface humano-animal-ambiente. Nossa missão é prover soluções justificáveis institucionalmente, alinhadas socialmente e economicamente viáveis para o enfrentamento de surtos e a proteção da saúde pública em nível federal e internacional."
+    },
+    "contact": {
+      "phone": "11 99424-9797",
+      "email": "contato@bioshieldstrategic.com"
+    }
+  },
+  "articles": [
+    {
+      "id": "1",
+      "title": "Conformidade Regulatória e Coordenação Federal",
+      "summary": "Otimização de protocolos de saúde animal e humana para atendimento a exigências federais e internacionais.",
+      "content": "<h3>Governança e Regulação</h3><p>O sucesso no controle de zoonoses depende de uma coordenação federal robusta e do estrito cumprimento da conformidade regulatória. Nossa consultoria foca na estruturação de protocolos que garantem a segurança sanitária em larga escala, mitigando o custo social e econômico de surtos inesperados.</p>"
+    },
+    {
+      "id": "2",
+      "title": "A Interface Humano-Animal-Ambiente (One Health)",
+      "summary": "A importância da visão integrada para o reconhecimento de impactos e prevenção de doenças emergentes.",
+      "content": "<h3>Saúde Única Integrada</h3><p>Reconhecemos que o impacto de patógenos transfronteiriços ocorre na complexa interface entre humanos, animais e o ambiente. O Dr. André Madsen aplica inteligência epidemiológica para decodificar estas interações, transformando o enfrentamento de surtos em uma estratégia de biodefesa institucionalmente necessária.</p>"
+    },
+    {
+      "id": "3",
+      "title": "Justificativa Econômica e Impacto na Saúde Pública",
+      "summary": "Análise da viabilidade e do mérito das intervenções estratégicas em biossegurança e práticas preventivas.",
+      "content": "<h3>Valor Estratégico</h3><p>Intervenções em biossegurança são economicamente justificáveis e institucionalmente alinhadas às metas de crescimento e estabilidade de uma nação. Nossa metodologia foca na implementação de práticas de prevenção de doenças que protegem a infraestrutura produtiva e a integridade da saúde comunitária.</p>"
+    }
+  ]
+}
