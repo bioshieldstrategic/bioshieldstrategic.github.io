@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioShield Strategic - Estratégias em Controle de Zoonoses</title>
+    <title>BioShield Strategic - Especialistas em Controle de Zoonoses</title>
     <meta name="description" content="Especialistas em Controle de Zoonoses e Saúde Pública (One Health).">
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
+
 <body>
-    
+
     <div id="loader-container">
         <div class="dna-loader">
             <svg class="dna-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +34,7 @@
                 <a href="/#sobre">Sobre</a>
                 <a href="/#artigos">Artigos</a>
                 <a href="/#contato">Contato</a>
-                <a href="{{ '/admin.html' | relative_url }}">Admin</a>
+                <a href="/admin.html">Admin</a>
                 <button class="lang-switch">PT | EN</button>
             </nav>
         </div>
@@ -50,7 +52,6 @@
     </div>
 
     <script>
-        // Oculta o loader suavemente após o carregamento
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader-container');
             if (loader) {
@@ -61,7 +62,6 @@
             }
         });
 
-        // Lógica do Modal de Artigos
         const modal = document.getElementById('article-modal');
         const modalBody = document.getElementById('modal-body-content');
         const closeBtn = document.querySelector('.modal-close');
@@ -85,7 +85,7 @@
             }
         }
 
-        if(closeBtn) {
+        if (closeBtn) {
             closeBtn.onclick = () => {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
@@ -99,7 +99,6 @@
             }
         }
 
-        // Carregamento dinâmico do Grid de Artigos na Home
         async function loadArticlesGrid() {
             const grid = document.getElementById('articles-grid');
             if (!grid) return;
@@ -121,6 +120,8 @@
 
         loadArticlesGrid();
     </script>
-    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+
+    <script src="/assets/js/site.js"></script>
 </body>
+
 </html>
