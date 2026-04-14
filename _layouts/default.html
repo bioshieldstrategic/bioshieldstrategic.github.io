@@ -4,58 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: "BioShield Strategic" }}</title>
-    <meta name="description" content="Especialistas em Controle de Zoonoses e Saúde Pública. Estratégias em Biossegurança.">
-    <!-- Vincula ao arquivo CSS gerado -->
+    <meta name="description" content="Especialistas em Controle de Zoonoses e Saúde Pública (One Health).">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
     
-    <!-- Tela de Carregamento (DNA Loader) -->
+    <!-- Loader DNA Simples -->
     <div id="loader-container">
-        <svg class="dna-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path class="helix-path1" d="M 20 10 Q 50 50 20 90" />
-            <path class="helix-path2" d="M 80 10 Q 50 50 80 90" />
-            <line class="helix-rung" x1="26" y1="20" x2="74" y2="20" />
-            <line class="helix-rung" x1="40" y1="40" x2="60" y2="40" />
-            <line class="helix-rung" x1="40" y1="60" x2="60" y2="60" />
-            <line class="helix-rung" x1="26" y1="80" x2="74" y2="80" />
+        <svg class="dna-loader" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path class="dna-path" d="M30,20 Q50,50 30,80" />
+            <path class="dna-path" d="M70,20 Q50,50 70,80" />
+            <line class="dna-path" x1="35" y1="30" x2="65" y2="30" />
+            <line class="dna-path" x1="45" y1="50" x2="55" y2="50" />
+            <line class="dna-path" x1="35" y1="70" x2="65" y2="70" />
         </svg>
-        <div class="loader-text">INICIALIZANDO</div>
     </div>
 
-    <!-- Cabeçalho (Header) -->
+    <!-- Header Navigation -->
     <header class="header">
         <div class="container">
-            <a href="{{ '/' | relative_url }}" class="brand">BioShield Strategic</a>
+            <a href="/" class="brand">BioShield Strategic</a>
             <nav class="nav-menu">
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="#artigos">Artigos</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#contato">Contato</a>
+                <a href="/#home">Home</a>
+                <a href="/#sobre">Sobre</a>
+                <a href="/#artigos">Artigos</a>
+                <a href="/#contato">Contato</a>
                 <button class="lang-switch">PT | EN</button>
             </nav>
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
     <main>
         {{ content }}
     </main>
 
-    <!-- Script de controle do Loader e idioma -->
+    <!-- Modal for Articles content -->
+    <div id="article-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
+
     <script>
-        // Oculta o loader após o carregamento total da página
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var loader = document.getElementById('loader-container');
-                loader.classList.add('loader-hidden');
-            }, 800); // 800ms de delay para demonstração estética
+        // Loader removal
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader-container');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 800);
         });
 
-        // Evento fictício para a troca de idioma
-        document.querySelector('.lang-switch').addEventListener('click', function() {
-            alert('A troca de idiomas será implementada na próxima fase.');
-        });
+        // Article Modal logic
+        const modal = document.getElementById('article-modal');
+        const modalBody = document.getElementById('modal-body-content');
+        const closeBtn = document.querySelector('.modal-close');
+
+        async function openArticle(id) {
+            try {
+                const response = await fetch('/data/content.json');
+                const data = await response.json();
+                const article = data.articles.find(a => a.id == id);
+                if (article) {
+                    modalBody.innerHTML = `
+                        <h1>${article.title}</h1>
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                        <div class="article-rich-text">${article.content}</div>
+                    `;
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            } catch (err) {
+                console.error("Error loading article:", err);
+            }
+        }
+
+        closeBtn.onclick = () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Article fetching (for home page cards)
+        async function loadArticlesGrid() {
+            const grid = document.getElementById('articles-grid');
+            if (!grid) return;
+
+            try {
+                const response = await fetch('/data/content.json');
+                const data = await response.json();
+                grid.innerHTML = data.articles.map(article => `
+                    <div class="card" onclick="openArticle('${article.id}')">
+                        <h2>${article.title}</h2>
+                        <p>${article.summary}</p>
+                        <span style="color: var(--deep-navy); font-weight: 700; font-size: 14px;">Ler Artigo Completo &rarr;</span>
+                    </div>
+                `).join('');
+            } catch (err) {
+                console.error("Error loading grid:", err);
+            }
+        }
+
+        loadArticlesGrid();
     </script>
 
 </body>
