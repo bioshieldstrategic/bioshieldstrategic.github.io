@@ -9,18 +9,21 @@
 </head>
 <body>
     
-    <!-- Loader DNA Simples -->
     <div id="loader-container">
-        <svg class="dna-loader" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path class="dna-path" d="M30,20 Q50,50 30,80" />
-            <path class="dna-path" d="M70,20 Q50,50 70,80" />
-            <line class="dna-path" x1="35" y1="30" x2="65" y2="30" />
-            <line class="dna-path" x1="45" y1="50" x2="55" y2="50" />
-            <line class="dna-path" x1="35" y1="70" x2="65" y2="70" />
-        </svg>
+        <div class="dna-loader">
+            <svg class="dna-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <path class="helix-path1" d="M 30 12 C 38 30, 38 90, 30 108" />
+                <path class="helix-path2" d="M 90 12 C 82 30, 82 90, 90 108" />
+                <line class="helix-rung" x1="32" y1="25" x2="88" y2="25" />
+                <line class="helix-rung" x1="36" y1="42" x2="84" y2="42" />
+                <line class="helix-rung" x1="42" y1="60" x2="78" y2="60" />
+                <line class="helix-rung" x1="36" y1="78" x2="84" y2="78" />
+                <line class="helix-rung" x1="32" y1="95" x2="88" y2="95" />
+            </svg>
+            <div class="loader-text">INICIALIZANDO</div>
+        </div>
     </div>
 
-    <!-- Header Navigation -->
     <header class="header">
         <div class="container">
             <a href="/" class="brand">BioShield Strategic</a>
@@ -29,6 +32,7 @@
                 <a href="/#sobre">Sobre</a>
                 <a href="/#artigos">Artigos</a>
                 <a href="/#contato">Contato</a>
+                <a href="{{ '/admin.html' | relative_url }}">Admin</a>
                 <button class="lang-switch">PT | EN</button>
             </nav>
         </div>
@@ -38,7 +42,6 @@
         {{ content }}
     </main>
 
-    <!-- Modal for Articles content -->
     <div id="article-modal" class="modal-overlay">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
@@ -47,16 +50,18 @@
     </div>
 
     <script>
-        // Loader removal
+        // Oculta o loader suavemente após o carregamento
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader-container');
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => loader.style.display = 'none', 500);
-            }, 800);
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => loader.style.display = 'none', 500);
+                }, 1000);
+            }
         });
 
-        // Article Modal logic
+        // Lógica do Modal de Artigos
         const modal = document.getElementById('article-modal');
         const modalBody = document.getElementById('modal-body-content');
         const closeBtn = document.querySelector('.modal-close');
@@ -80,9 +85,11 @@
             }
         }
 
-        closeBtn.onclick = () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+        if(closeBtn) {
+            closeBtn.onclick = () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
 
         window.onclick = (event) => {
@@ -92,7 +99,7 @@
             }
         }
 
-        // Article fetching (for home page cards)
+        // Carregamento dinâmico do Grid de Artigos na Home
         async function loadArticlesGrid() {
             const grid = document.getElementById('articles-grid');
             if (!grid) return;
@@ -104,7 +111,7 @@
                     <div class="card" onclick="openArticle('${article.id}')">
                         <h2>${article.title}</h2>
                         <p>${article.summary}</p>
-                        <span style="color: var(--deep-navy); font-weight: 700; font-size: 14px;">Ler Artigo Completo &rarr;</span>
+                        <span style="color: var(--deep-navy); font-weight: 700; font-size: 14px; margin-top:15px; display:inline-block;">Ler Artigo Completo &rarr;</span>
                     </div>
                 `).join('');
             } catch (err) {
@@ -114,6 +121,6 @@
 
         loadArticlesGrid();
     </script>
-
+    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 </html>
