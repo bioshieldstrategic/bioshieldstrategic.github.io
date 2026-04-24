@@ -278,11 +278,10 @@
 
             <div class="modal-section">
                 <span class="lang-badge en">ENGLISH</span>
-                <h4>Dados em Inglês (Tradução Automática)</h4>
+<h4>Dados em Inglês</h4>
                 <p style="font-size: 13px; color: var(--slate-grey); margin-bottom: 15px;">
-                    Após preencher o português, clique em "Traduzir" para gerar a tradução automática. Você pode editar a tradução manualmente após.
+                    Preencha manualmente. Use Google Translate ou outro tradutor de sua preferência.
                 </p>
-                <button type="button" id="btn-translate" class="btn" style="background: var(--slate-grey); margin-bottom: 15px;">Traduzir Conteúdo</button>
                 <div class="form-group">
                     <label>Article Title</label>
                     <input type="text" id="modal-en-title" placeholder="Article title in English">
@@ -307,140 +306,12 @@
 
     <div id="toast-container"></div>
 
-    <script>
+<script>
         let currentData = null;
         let editingArticleId = null;
         const REPO_OWNER = 'bioshieldstrategic';
         const REPO_NAME = 'bioshieldstrategic.github.io';
         const FILE_PATH = 'data/content.json';
-
-        const translations = {
-            'Biossegurança': 'Biosafety', 'Segurança': 'Safety', 'Saúde': 'Health', 'Público': 'Public',
-            'Animal': 'Animal', 'Animais': 'Animals', 'Humano': 'Human', 'Humanos': 'Humans',
-            'Ambiente': 'Environment', 'Doença': 'Disease', 'Doenças': 'Diseases', 'Prevenção': 'Prevention',
-            'Controle': 'Control', 'Zoonoses': 'Zoonoses', 'Spillover': 'Spillover', 'Protocolos': 'Protocols',
-            'Protocolo': 'Protocol', 'Treinamento': 'Training', 'Monitoramento': 'Monitoring',
-            'Resposta': 'Response', 'Surtos': 'Outbreaks', 'Risco': 'Risk', 'Riscos': 'Risks',
-            'Avaliação': 'Assessment', 'Implementação': 'Implementation', 'Estrutural': 'Structural',
-            'Operacional': 'Operational', 'Conceitual': 'Conceptual', 'Instalações': 'Facilities',
-            'Equipes': 'Teams', 'Profissionais': 'Professionals', 'Vigilância': 'Surveillance',
-            'Detecção': 'Detection', 'Precoce': 'Early', 'Contingência': 'Contingency', 'Patógenos': 'Pathogens',
-            'Sanitária': 'Sanitary', 'Sanitário': 'Sanitary', 'Epidemiológica': 'Epidemiological',
-            'Vulnerabilidades': 'Vulnerabilities', 'Quarentena': 'Quarantine', 'Recintos': 'Enclosures',
-            'Barreiras': 'Barriers', 'Desinfecção': 'Disinfection', 'Limpeza': 'Cleaning',
-            'Resíduos': 'Waste', 'Manejo': 'Handling', 'Veterinária': 'Veterinary',
-            'Zoológico': 'Zoo', 'Zoológicos': 'Zoos', 'Reabilitação': 'Rehabilitation',
-            'Espécies': 'Species', 'Fauna': 'Fauna', 'Selvagem': 'Wildlife',
-            'Proteção': 'Protection', 'Mitigação': 'Mitigation', 'Economicamente': 'Economically',
-            'Justificável': 'Justifiable', 'Federal': 'Federal', 'Internacional': 'International',
-            'Coordenação': 'Coordination', 'Regulatória': 'Regulatory', 'Conformidade': 'Compliance',
-            'Interface': 'Interface', 'Impacto': 'Impact', 'Emergentes': 'Emerging',
-            'Infraestrutura': 'Infrastructure', 'Produtiva': 'Productive', 'Comunitária': 'Community',
-            'Financeiras': 'Financial', 'Bloqueios': 'Blockages', 'Sanitários': 'Sanitary',
-            'Eradicação': 'Eradication', 'Plantéis': 'Herds', 'Crises': 'Crises',
-            'Retorno': 'Return', 'Investimento': 'Investment', 'Emergências': 'Emergencies',
-            'Auditoria': 'Audit', 'Meticulosa': 'Meticulous', 'Processuais': 'Procedural',
-            'Entrada': 'Entry', 'Patógeno': 'Pathogen', 'Introduzido': 'Introduced',
-            'Rotinas': 'Routines', 'Adaptados': 'Adapted', 'Realidade': 'Reality',
-            'Imersiva': 'Immersive', 'Padronizada': 'Standardized', 'Execução': 'Execution',
-            'Contínua': 'Continuous', 'Anomalias': 'Anomalies', 'Ameaças': 'Threats',
-            'Contenção': 'Containment', 'Coordenada': 'Coordinated', 'Neutralização': 'Neutralization',
-            'Rápida': 'Rapid', 'Mapeando': 'Mapping', 'Zona': 'Zone', 'Contágio': 'Contagion',
-            'Estruturar': 'Build', 'Garantir': 'Ensure', 'Desenvolvimento': 'Development',
-            'Criação': 'Creation', 'Seguras': 'Safe', 'Fluxos': 'Flows',
-            'Centro': 'Center', 'Funcionem': 'Work', 'Prática': 'Practice', 'Diária': 'Daily',
-            'Capacitação': 'Training', 'Veterinárias': 'Veterinary',
-            'Apliquem': 'Apply', 'Forma': 'Form', 'Consistente': 'Consistent',
-            'Continua': 'Continuous', 'Sanitárias': 'Sanitary', 'Early Warning': 'Early Warning',
-            'Permita': 'Allows', 'Sejam': 'Are',
-            'Planos': 'Plans', 'Caso': 'Case',
-            'Evitar': 'Avoid', 'Proteger': 'Protect', 'O sucesso no controle': 'Success in control',
-            'Depende': 'Depends', 'Robusta': 'Robust', 'Estrito': 'Strict', 'Cumprimento': 'Compliance',
-            'Foca': 'Focuses', 'Estruturação': 'Structuring', 'Garantem': 'Ensure',
-            'Larga': 'Large', 'Escala': 'Scale', 'Mitigando': 'Mitigating', 'Custo': 'Cost',
-            'Social': 'Social', 'Econômico': 'Economic', 'Inesperados': 'Unexpected',
-            'Integração': 'Integration', 'Agências': 'Agencies', 'Essencial': 'Essential',
-            'Criar': 'Create', 'Sistema': 'System', 'Defesa': 'Defense', 'Biológica': 'Biological',
-            'Coeso': 'Cohesive', 'Eficaz': 'Effective', 'Experiência': 'Experience',
-            'Articulação': 'Coordination', 'Órgãos': 'Bodies', 'Alinhamento': 'Alignment',
-            'Estratégico': 'Strategic', 'Reconhecemos': 'We recognize',
-            'Transfronteiriços': 'Transboundary', 'Ocorre': 'Occurs',
-            'Complexa': 'Complex', 'Aplica': 'Applies', 'Inteligência': 'Intelligence',
-            'Decodificar': 'Decode', 'Estas': 'These',
-            'Interações': 'Interactions', 'Transformando': 'Transforming', 'Enfrentamento': 'Response',
-            'Institucionalmente': 'Institutionally', 'Necessária': 'Necessary',
-            'Mais de': 'More than', 'Cada': 'Each', 'Conhecidas': 'Known',
-            'Têm': 'Have', 'Origem': 'Origin',
-            'Demonstra': 'Demonstrates', 'Prevenir': 'Prevent',
-            'Transmissão': 'Transmission', 'Entre': 'Between',
-            'Prioridade': 'Priority', 'Global': 'Global', 'Abordagem': 'Approach',
-            'Integra': 'Integrates', 'Para': 'For',
-            'Intervenções': 'Interventions', 'Justificáveis': 'Justifiable',
-            'Metas': 'Goals', 'Crescimento': 'Growth',
-            'Estabilidade': 'Stability', 'Nação': 'Nation', 'Metodologia': 'Methodology',
-            'Práticas': 'Practices',
-            'Doenças': 'Diseases', 'Protegem': 'Protect', 'Integridade': 'Integrity',
-            'Especialistas': 'Specialists', 'Especialista': 'Specialist',
-            'Médico': 'Medical', 'Médica': 'Medical', 'Veterinário': 'Veterinary', 'Veterinária': 'Veterinary',
-            'Médicos': 'Medical', 'Animais': 'Animals', 'Criação': 'Creation',
-            'Estratégias': 'Strategies', 'Estratégia': 'Strategy',
-            'Modelos': 'Models', 'Modelo': 'Model',
-            'Bases': 'Bases', 'Base': 'Base',
-            'Dados': 'Data', 'Análise': 'Analysis', 'Analisar': 'Analyze',
-            'Governança': 'Governance', 'Governo': 'Government', 'Governos': 'Governments',
-            'Organizações': 'Organizations', 'Organização': 'Organization',
-            'Preparados': 'Prepared', 'Preparação': 'Preparation',
-            'Desafios': 'Challenges', 'Desafio': 'Challenge',
-            'Século': 'Century', 'XXI': '21st',
-            'Internacional': 'International', 'Transnacional': 'Transnational',
-            'Relevância': 'Relevance', 'Relevante': 'Relevant',
-            'Meritório': 'Meritorious', 'Mérito': 'Merit',
-            'Interesse Nacional': 'National Interest',
-            'EUA': 'USA', 'Estados Unidos': 'United States', 'Americano': 'American',
-            'Dr. André Madsen': 'Dr. Andre Madsen',
-            'Biodefesa': 'Biodefense', 'Bio Segurança': 'Biosafety',
-            'One Health': 'One Health', 'Saúde Única': 'One Health',
-            'BioShield Strategic': 'BioShield Strategic',
-            'Biossegurança Ativa': 'Active Biosafety'
-        };
-
-        function translateSentence(text) {
-            if (!text) return '';
-            let result = text;
-            Object.keys(translations).sort((a, b) => b.length - a.length).forEach(key => {
-                const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-                result = result.replace(regex, translations[key]);
-            });
-            return result.charAt(0).toUpperCase() + result.slice(1);
-        }
-
-        function showToast(message, type) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = 'toast ' + type;
-            toast.innerHTML = message;
-            container.appendChild(toast);
-            setTimeout(() => {
-                toast.classList.add('hiding');
-                setTimeout(() => toast.remove(), 300);
-            }, type === 'success' ? 4000 : 3000);
-        }
-
-        document.getElementById('btn-translate').addEventListener('click', function() {
-            const ptTitle = document.getElementById('modal-pt-title').value.trim();
-            const ptSummary = document.getElementById('modal-pt-summary').value.trim();
-            const ptContent = document.getElementById('modal-pt-content').value.trim();
-
-            if (!ptTitle && !ptContent) {
-                showToast('Preencha o titulo ou conteudo em portugues primeiro.', 'error');
-                return;
-            }
-
-            document.getElementById('modal-en-title').value = ptTitle ? translateSentence(ptTitle) : '';
-            document.getElementById('modal-en-summary').value = ptSummary ? translateSentence(ptSummary) : '';
-            document.getElementById('modal-en-content').value = ptContent ? translateSentence(ptContent) : '';
-            showToast('Traducao gerada! Revise e ajuste se necessario.', 'success');
-        });
 
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
