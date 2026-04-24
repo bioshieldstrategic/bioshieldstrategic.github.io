@@ -310,6 +310,49 @@
         const REPO_NAME = 'bioshieldstrategic.github.io';
         const FILE_PATH = 'data/content.json';
 
+        const translations = {
+            'Conformidade Regulatória e Coordenação Federal': 'Regulatory Compliance and Federal Coordination',
+            'A Interface Humano-Animal-Ambiente (One Health)': 'The Human-Animal-Environment Interface (One Health)',
+            'Justificativa Econômica e Impacto na Saúde Pública': 'Economic Justification and Public Health Impact',
+            'Biossegurança para Instalações com Animais': 'Biosafety for Animal Facilities',
+            'Metodologia de Implementação em 5 Etapas': '5-Step Implementation Methodology',
+            'O Empreendimento Proposto: Vulnerabilidade e Solução': 'The Proposed Endeavor: Vulnerability and Solution',
+            'Análise Jurídica: Matter of Dhanasar': 'Legal Analysis: Matter of Dhanasar',
+            'Espectro de Impacto Nacional nos Estados Unidos': 'National Impact Spectrum in the United States',
+            'Otimização de protocolos de saúde animal e humana para atendimento a exigências federais e internacionais.': 'Optimization of animal and human health protocols for meeting federal and international requirements.',
+            'A importância da visão integrada para o reconhecimento de impactos e prevenção de doenças emergentes.': 'The importance of an integrated view for recognizing impacts and preventing emerging diseases.',
+            'Análise da viabilidade e do mérito das intervenções estratégicas em biossegurança e práticas preventivas.': 'Analysis of the feasibility and merit of strategic interventions in biosafety and preventive practices.',
+            'Práticas claras, áreas bem desenhadas e rotinas consistentes para evitar a entrada e o avanço de agentes infecciosos.': 'Clear practices, well-designed areas, and consistent routines to prevent the entry and spread of infectious agents.',
+            'O modelo estruturado de Biossegurança Ativa do Dr. André Madsen para instituições dos EUA.': "Dr. André Madsen's Active Biosafety structured model for U.S. institutions.",
+            'Análise da vulnerabilidade crítica dos EUA em biossegurança e a proposta de implementação de sistemas BioShield.': 'Analysis of U.S. critical biosafety vulnerability and the BioShield implementation proposal.',
+            'A fundamentação legal que qualifica o perfil para a dispensa NIW baseada nos três prongs do Matter of Dhanasar.': 'The legal foundation qualifying the profile for NIW waiver based on the three prongs of Matter of Dhanasar.',
+            'Os ganhos em escala para os EUA com a implementação de sistemas de biossegurança estruturados.': 'The scale of gains for the U.S. with implementation of structured biosafety systems.',
+            'Governança e Regulação': 'Governance and Regulation',
+            'Coordenação Federal': 'Federal Coordination',
+            'Saúde Única Integrada': 'Integrated One Health',
+            'Modelo One Health': 'One Health Model',
+            'Valor Estratégico': 'Strategic Value',
+            'Mitigação de Custos': 'Cost Mitigation',
+            'Biossegurança Conceitual': 'Conceptual Biosafety',
+            'Biossegurança Estrutural': 'Structural Biosafety',
+            'Biossegurança Operacional': 'Operational Biosafety',
+            'A Vulnerabilidade dos Estados Unidos': 'United States Vulnerability',
+            'A Solução BioShield Strategic': 'The BioShield Strategic Solution',
+            'Projeção de Mitigação de Risco': 'Risk Mitigation Projection',
+            'Prong 1: Mérito e Importância Nacional': 'Prong 1: Merit and National Importance',
+            'Prong 2: Bem Posicionado para Avançar': 'Prong 2: Well Positioned to Advance',
+            'Prong 3: Dispensa da Certificação de Trabalho': 'Prong 3: Labor Certification Waiver',
+            'Redução de Surtos e Spillover': 'Outbreak and Spillover Reduction',
+            'Continuidade Institucional': 'Institutional Continuity',
+            'Proteção da Biodiversidade': 'Biodiversity Protection',
+            'Mitigação Econômica': 'Economic Mitigation',
+            '1. Avaliação de Risco': '1. Risk Assessment',
+            '2. Design de Protocolos': '2. Protocol Design',
+            '3. Treinamento da Força de Trabalho': '3. Workforce Training',
+            '4. Monitoramento Estruturado': '4. Structured Monitoring',
+            '5. Resposta a Surtos': '5. Outbreak Response'
+        };
+
         document.getElementById('login-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const pass = document.getElementById('admin-pass').value;
@@ -436,7 +479,7 @@
             return text.split('\n\n').filter(p => p.trim()).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
         }
 
-        function translateArticle() {
+function translateArticle() {
             const ptTitle = document.getElementById('modal-pt-title').value.trim();
             const ptSummary = document.getElementById('modal-pt-summary').value.trim();
             const ptContent = document.getElementById('modal-pt-content').value.trim();
@@ -446,10 +489,12 @@
                 return;
             }
 
-            const translations = getBasicTranslations();
-            let enTitle = translations[ptTitle];
-            let enSummary = translations[ptSummary];
-            let enContent = ptContent.split('\n\n').map(p => translations[p.trim()] || translateSentence(p.trim())).join('\n\n');
+            let enTitle = translations[ptTitle] || (ptTitle ? translateSentence(ptTitle) : '');
+            let enSummary = translations[ptSummary] || (ptSummary ? translateSentence(ptSummary) : '');
+            let enContent = ptContent.split('\n\n').map(p => {
+                const trimmed = p.trim();
+                return translations[trimmed] || translateSentence(trimmed);
+            }).join('\n\n');
 
             if (!enTitle) enTitle = ptTitle;
             if (!enSummary) enSummary = ptSummary;
@@ -458,35 +503,6 @@
             document.getElementById('modal-en-summary').value = enSummary;
             document.getElementById('modal-en-content').value = enContent;
             showToast('Tradução gerada! Revise e ajuste se necessário.', 'success');
-        }
-
-        function getBasicTranslations() {
-            return {
-                'Conformidade Regulatória e Coordenação Federal': 'Regulatory Compliance and Federal Coordination',
-                'A Interface Humano-Animal-Ambiente (One Health)': 'The Human-Animal-Environment Interface (One Health)',
-                'Justificativa Econômica e Impacto na Saúde Pública': 'Economic Justification and Public Health Impact',
-                'Biossegurança para Instalações com Animais': 'Biosafety for Animal Facilities',
-                'Metodologia de Implementação em 5 Etapas': '5-Step Implementation Methodology',
-                'Otimização de protocolos de saúde animal e humana para atendimento a exigências federais e internacionais.': 'Optimization of animal and human health protocols for meeting federal and international requirements.',
-                'A importância da visão integrada para o reconhecimento de impactos e prevenção de doenças emergentes.': 'The importance of an integrated view for recognizing impacts and preventing emerging diseases.',
-                'Análise da viabilidade e do mérito das intervenções estratégicas em biossegurança e práticas preventivas.': 'Analysis of the feasibility and merit of strategic interventions in biosafety and preventive practices.',
-                'Práticas claras, áreas bem desenhadas e rotinas consistentes para evitar a entrada e o avanço de agentes infecciosos.': 'Clear practices, well-designed areas, and consistent routines to prevent the entry and spread of infectious agents.',
-                'O modelo estruturado de Biossegurança Ativa do Dr. André Madsen para instituições dos EUA.': "Dr. André Madsen's Active Biosafety structured model for U.S. institutions.",
-                'Governança e Regulação': 'Governance and Regulation',
-                'Coordenação Federal': 'Federal Coordination',
-                'Saúde Única Integrada': 'Integrated One Health',
-                'Modelo One Health': 'One Health Model',
-                'Valor Estratégico': 'Strategic Value',
-                'Mitigação de Custos': 'Cost Mitigation',
-                'Biossegurança Conceitual': 'Conceptual Biosafety',
-                'Biossegurança Estrutural': 'Structural Biosafety',
-                'Biossegurança Operacional': 'Operational Biosafety',
-                '1. Avaliação de Risco': '1. Risk Assessment',
-                '2. Design de Protocolos': '2. Protocol Design',
-                '3. Treinamento da Força de Trabalho': '3. Workforce Training',
-                '4. Monitoramento Estruturado': '4. Structured Monitoring',
-                '5. Resposta a Surtos': '5. Outbreak Response'
-            };
         }
 
         function translateSentence(text) {
