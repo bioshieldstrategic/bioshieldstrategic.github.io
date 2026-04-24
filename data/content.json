@@ -45,19 +45,13 @@
         "id": "4",
         "title": "Biossegurança para Instalações com Animais",
         "summary": "Práticas claras, áreas bem desenhadas e rotinas consistentes para evitar a entrada e o avanço de agentes infecciosos.",
-        "content": "<h3>Biossegurança Conceitual</h3><p>Esta etapa define onde e como as operações acontecem. Inclui a avaliação da localização, o fluxo de pessoas e animais, e a identificação de zonas de risco em instalações que lidam com animais silvestres, exóticos ou de produção.</p><h3>Biossegurança Estrutural</h3><p>Corresponde ao desenho físico da instalação: áreas limpas e contaminadas separadas, recintos de quarentena, superfícies laváveis e barreiras de proteção que impeçam a propagação de patógenos entre setores.</p><h3>Biossegurança Operacional</h3><p>Refere-se aos processos do dia a dia: uso correto de EPIs, limpeza e desinfecção de superfícies, gerenciamento de resíduos biológicos, treinamento contínuo de equipes e protocolos de resposta a incidentes sanitários.</p>"
+        "content": "<h3>Biossegurança Conceitual</h3><p>Esta etapa define onde e como as operações acontecem. Inclui a avaliação da localização, o fluxo de pessoas e animais, e a identificação de zonas de risco em instalações que lidam com animais silvestres, exóticos ou de produção.</p><h3>Biossegurança Estrutural</h3><p>Corresponde ao desenho físico da instalação: áreas limpas e contaminadas separadas, recintos de quarantine, superfícies laváveis e barreiras de proteção que impeçam a propagação de patógenos entre setores.</p><h3>Biossegurança Operacional</h3><p>Refere-se aos processos do dia a dia: uso correto de EPIs, limpeza e desinfecção de superfícies, gerenciamento de resíduos biológicos, treinamento contínuo de equipes e protocolos de resposta a incidentes sanitários.</p>"
       },
       {
         "id": "5",
         "title": "Metodologia de Implementação em 5 Etapas",
         "summary": "O modelo estruturado de Biossegurança Ativa do Dr. André Madsen para instituições dos EUA.",
-        "content": "<h3>1. Avaliação de Risco</h3><p>Auditoria meticulosa de vulnerabilidades estruturais e processuais nas instalações. Identificação de pontos cegos na entrada de animais, procedimentos de quarentena e design de recintos. O objetivo é mapear a zona de contágio antes que o patógeno seja introduzido no ambiente institucional.</p><h3>2. Design de Protocolos</h3><p>Criação de rotinas seguras e fluxos operacionais de biossegurança adaptados à realidade de cada centro de reabilitação, zoológico ou instalação de vida selvagem. Estruturar barreiras sanitárias robustas que funcionem na prática diária.</p><h3>3. Treinamento da Força de Trabalho</h3><p>Capacitação imersiva de equipes veterinárias e de manejo para execução padronizada de práticas baseadas no conceito One Health. Garantir que todos os profissionais entendam e apliquem os protocolos de forma consistente.</p><h3>4. Monitoramento Estruturado</h3><p>Implementação de sistemas de vigilância contínua para detecção precoce de anomalias sanitárias nos plantéis. Sistema de Early Warning que permita identificação imediata de ameaças antes que se tornem surtos.</p><h3>5. Resposta a Surtos</h3><p>Desenvolvimento de planos de contingência para contenção rápida e coordenada em caso de detecção de patógenos com potencial zoonótico. Neutralização rápida para evitar o spillover e proteger a interface humano-animal.</p>"
-      },
-      {
-        "id": "6",
-        "title": "Novo Artigo",
-        "summary": "Resumo do artigo...",
-        "content": "<h3>Conteúdo</h3><p>Teste inserção artigo portugues</p>"
+
       }
     ],
     "nav": {
@@ -124,9 +118,6 @@
       },
       {
         "id": "6",
-        "title": "New Article",
-        "summary": "Article summary...",
-        "content": "<h3>Content</h3><p>Teste inserção artigo ingles</p>"
       }
     ],
     "nav": {
