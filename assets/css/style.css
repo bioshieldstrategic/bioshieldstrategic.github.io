@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
 
 :root {
-  --deep-navy: #002147;
-  --slate-grey: #4A5568;
-  --medical-white: #F8FAFC;
-  --security-red: #9B1C1C;
-  --pure-white: #FFFFFF;
-  --navy-hover: #003a7a;
-  --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --border-radius: 4px;
-  --transition: all 0.3s ease;
+    --deep-navy: #002147;
+    --slate-grey: #4A5568;
+    --medical-white: #F8FAFC;
+    --security-red: #9B1C1C;
+    --pure-white: #FFFFFF;
+    --navy-hover: #003a7a;
+    --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 4px;
+    --transition: all 0.3s ease;
 }
 
 body {
@@ -22,7 +22,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
     color: var(--deep-navy);
     font-weight: 700;
@@ -209,8 +214,13 @@ section {
 }
 
 @keyframes simple-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .dna-path {
@@ -244,7 +254,7 @@ section {
     padding: 60px 40px 40px 40px;
     position: relative;
     overflow-y: auto;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 .modal-close {
@@ -275,7 +285,7 @@ section {
     background: white;
     padding: 40px;
     border-radius: var(--border-radius);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .tabs-nav {
@@ -298,12 +308,32 @@ section {
     border-bottom-color: var(--deep-navy);
 }
 
-.tab-content { display: none; }
-.tab-content.active { display: block; }
+.tab-content {
+    display: none;
+}
 
-.form-group { margin-bottom: 20px; }
-label { display: block; margin-bottom: 8px; font-weight: 600; }
-input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
+.tab-content.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
 
 .article-edit-card {
     border: 1px solid #eee;
@@ -323,7 +353,8 @@ input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-rad
     margin: 40px auto;
 }
 
-.admin-input, .admin-textarea {
+.admin-input,
+.admin-textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -399,5 +430,5 @@ input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-rad
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 25%;
+    object-position: center 30%;
 }
