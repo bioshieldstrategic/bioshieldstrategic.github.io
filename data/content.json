@@ -82,12 +82,6 @@
         "title": "Projeções de Mitigação de Risco: Dados e Métricas",
         "summary": "Análise quantitativa do impacto da implementação do modelo BioShield na redução de riscos sanitários.",
         "content": "<h3>Métricas de Risco de Exposição</h3><p>Instalações convencionais operam com um índice de risco de exposição a patógenos de aproximadamente 85%. Este número representa a vulnerabilidade média de operações sem protocolos estruturados de biossegurança. A implementação completa do modelo BioShield reduz este índice para aproximadamente 20%, uma redução de 76% no risco de exposição.</p><h3>Eficiência de Contenção</h3><p>A eficiência de contenção em instalações convencionais raramente ultrapassa 30%, indicando que a maioria das barreiras sanitárias é ineficiente contra propagação de patógenos. Com a metodologia BioShield, a eficiência de contenção sobe para 95%, garantindo que mesmo em caso de detecção de patógeno, a propagação seja contida antes de atingir populações sensíveis.</p><h3>Distribuição de Impacto por Setor</h3><p>A metodologia BioShield beneficia diferentes tipos de instituições de forma diferenciada: Clínicas de Animais Exóticos e Zoológicos representam 25% cada do foco de atuação, seguidos por Centros de Reabilitação com 20%. Programas de Conservação e Criadouros Especializados completam o espectro com 15% cada.</p><h3>Comparativo: Biossegurança Ativa vs. Convencional</h3><p>O modelo de biossegurança convencional é predominantemente reativo, respondendo a problemas após sua ocorrência. O modelo BioShield é proativo, implementando prevenção estruturada que elimina pontos cegos antes que patógenos sejam introduzidos. Esta mudança de paradigma resulta em economia significativa de recursos e proteção superior.</p>"
-      },
-      {
-        "id": "11",
-        "title": "teste",
-        "summary": "teste",
-        "content": "<p>teste</p>"
       }
     ],
     "nav": {
@@ -181,12 +175,6 @@
         "title": "Risk Mitigation Projections: Data and Metrics",
         "summary": "Quantitative analysis of the impact of BioShield model implementation on sanitary risk reduction.",
         "content": "<h3>Exposure Risk Metrics</h3><p>Conventional facilities operate with an exposure risk index of approximately 85%. This number represents the average vulnerability of operations without structured biosafety protocols. Full BioShield model implementation reduces this index to approximately 20%, a 76% reduction in exposure risk.</p><h3>Containment Efficiency</h3><p>Containment efficiency in conventional facilities rarely exceeds 30%, indicating that most sanitary barriers are ineffective against pathogen spread. With the BioShield methodology, containment efficiency rises to 95%, ensuring that even in case of pathogen detection, spread is contained before reaching susceptible populations.</p><h3>Impact Distribution by Sector</h3><p>The BioShield methodology benefits different institution types differently: Exotic Animal Clinics and Zoos represent 25% each of operational focus, followed by Rehabilitation Centers at 20%. Conservation Programs and Specialized Breeders complete the spectrum with 15% each.</p><h3>Comparative: Active vs. Conventional Biosafety</h3><p>The conventional biosafety model is predominantly reactive, responding to problems after they occur. The BioShield model is proactive, implementing structured prevention that eliminates blind spots before pathogens are introduced. This paradigm shift results in significant resource savings and superior protection.</p>"
-      },
-      {
-        "id": "11",
-        "title": "teste",
-        "summary": "teste",
-        "content": "<p>teste</p>"
       }
     ],
     "nav": {
