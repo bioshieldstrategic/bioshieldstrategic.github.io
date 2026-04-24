@@ -1,0 +1,40 @@
+﻿Resumos Estratégicos - Processo EB-2 NIW (André Madsen)
+Abaixo estão os resumos estruturados dos dois documentos principais do pleito imigratório, organizados para facilitar a extração de conteúdo para o site.
+🏛️ CANVAS 1: Plano Executivo (PE - Professional Endeavor)
+Este documento detalha o que o André vai fazer nos EUA, como vai fazer e qual é o impacto prático dessa operação.
+
+
+Elemento
+	Descrição Estratégica
+	A Proposta Principal (Endeavor)
+	Desenvolver e implementar sistemas de biossegurança, prevenção de zoonoses e gestão de riscos baseados no conceito One Health (Saúde Única) para operações envolvendo vida selvagem, animais exóticos e a interface humano-animal nos EUA.
+	O Problema (A Dor dos EUA)
+	Vulnerabilidades em operações que lidam com animais (criadouros, zoológicos, resgate). A falta de sistemas preventivos rigorosos pode levar ao spillover (salto de doenças de animais para humanos), gerando surtos e crises de saúde pública.
+	A Solução (Os 5 Pilares de Implementação)
+	1. Avaliação de Risco (Auditoria de vulnerabilidades);
+
+
+2. Design de Protocolos (Criação de rotinas seguras);
+
+
+3. Treinamento da Força de Trabalho (Capacitação de equipes);
+
+
+4. Monitoramento Estruturado (Vigilância contínua);
+
+
+5. Resposta a Surtos (Contenção rápida e coordenada).
+	Público-Alvo / Clientes
+	Centros de reabilitação de vida selvagem, clínicas de animais exóticos, instituições zoológicas, programas de conservação e instalações de reprodução.
+	Impacto Esperado (Ganhos para os EUA)
+	Redução drástica do risco de surtos, garantia de continuidade operacional das instituições, proteção da biodiversidade e mitigação de perdas econômicas e sociais causadas por emergências sanitárias.
+	⚖️ CANVAS 2: Análise Dhanasar (DPA - Dhanasar Prong Analysis)
+Este documento é a argumentação jurídica. Ele pega o "Plano Executivo" acima e prova para o governo americano (USCIS) que o André cumpre os 3 requisitos (Prongs) da lei de imigração baseada em Interesse Nacional.
+Requisito Legal (Matter of Dhanasar)
+	O Argumento de Defesa do André
+	Prong 1: Mérito Substancial e Importância Nacional
+	O controle de zoonoses e a prevenção de surtos (spillover) não beneficiam apenas um zoológico ou uma clínica isolada, mas protegem a saúde pública e a economia nacional dos EUA. É uma resposta direta a uma vulnerabilidade crítica do país.
+	Prong 2: Bem Posicionado para Avançar o Empreendimento
+	André possui experiência técnica única, histórico comprovado de sucesso em medicina de animais selvagens, expertise em biossegurança e a capacidade prática de transformar teoria em sistemas operacionais no campo.
+	Prong 3: Benefício em Dispensar a Certificação de Trabalho (Visto Waiver)
+	A urgência de proteger os EUA contra ameaças biológicas e o nível de especialização técnica do André tornam impraticável e contraproducente exigir uma vaga de emprego formal (Labor Certification). O benefício de tê-lo operando livremente no país na prevenção de surtos supera largamente o interesse de proteger o mercado de trabalho local.
