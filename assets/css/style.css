@@ -317,3 +317,87 @@ input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-rad
     margin: 100px auto;
     text-align: center;
 }
+
+.admin-card {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.admin-input, .admin-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.admin-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.admin-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-section h3 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--deep-navy);
+}
+
+.admin-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn-secondary {
+    background-color: var(--slate-grey);
+}
+
+.btn-secondary:hover {
+    background-color: #3d4855;
+}
+
+.btn-github {
+    background-color: #238636;
+}
+
+.btn-github:hover {
+    background-color: #2ea043;
+}
+
+.admin-file-input {
+    padding: 10px;
+    border: 1px dashed var(--slate-grey);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.profile-image-container {
+    width: 350px;
+    height: 450px;
+    border-radius: 4px;
+    border: 2px solid var(--deep-navy);
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+}

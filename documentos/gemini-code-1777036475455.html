@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê Interativo EB-2 NIW: André Madsen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #F8FAFC;
+            color: #334155;
+            overflow-x: hidden;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .interactive-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .interactive-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .active-tab {
+            background-color: #002147;
+            color: #ffffff;
+            border-color: #002147;
+        }
+        .inactive-tab {
+            background-color: #ffffff;
+            color: #4A5568;
+            border-color: #E2E8F0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: Corporate BioTech (Deep Navy #002147, Slate Grey #4A5568, Medical White #F8FAFC, Security Red #9B1C1C, Pure White #FFFFFF) -->
+    
+    <!-- Application Structure Plan: A SPA dashboard structured to logically walk an adjudicator or stakeholder through the EB-2 NIW case. It starts with an executive summary header, moves into the core problem and proposed solution (The Endeavor), details the operational methodology (5 Pillars) interactively to avoid text fatigue, visualizes the national impact using charts, and concludes with the legal justification (Matter of Dhanasar). This narrative flow mirrors a persuasive legal brief but uses interactivity to make the complex epidemiological and legal concepts easily digestible. -->
+
+    <!-- Visualization & Content Choices: 
+    1. Conceptual Bar Chart (Risk Assessment): Goal: Compare vulnerability. Method: Chart.js Bar Chart. Interaction: Hover tooltips. Justification: Visually demonstrates the 'Why' of the endeavor - the dramatic reduction in spillover risk.
+    2. Interactive 5-Pillar Tabs: Goal: Organize process flow. Method: HTML/JS Tabs. Interaction: Click to reveal details. Justification: Breaks down complex methodology into digestible chunks without SVG/Mermaid.
+    3. Impact Doughnut Chart: Goal: Inform on target beneficiaries. Method: Chart.js Doughnut. Interaction: Hover. Justification: Shows the breadth of the national impact across different sectors.
+    4. Dhanasar Grid: Goal: Organize legal arguments. Method: CSS Grid HTML cards. Interaction: Hover elevation. Justification: Clearly delineates the 3 legal prongs required for the visa. -->
+
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="bg-[#002147] text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <span class="text-2xl">🛡️</span>
+                    <span class="font-bold text-xl tracking-tight">BioShield EB-2 NIW Dossiê</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="scrollToSection('contexto')" class="hover:text-blue-200 transition-colors">O Empreendimento</button>
+                    <button onclick="scrollToSection('pilares')" class="hover:text-blue-200 transition-colors">Metodologia</button>
+                    <button onclick="scrollToSection('impacto')" class="hover:text-blue-200 transition-colors">Impacto Nacional</button>
+                    <button onclick="scrollToSection('dhanasar')" class="hover:text-blue-200 transition-colors">Análise Legal</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white border-b border-gray-200 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#002147] tracking-tight mb-4">
+                André Henrique Falconi Madsen
+            </h1>
+            <p class="text-xl md:text-2xl text-[#4A5568] max-w-3xl mx-auto font-light">
+                Especialista em Controle de Zoonoses, Biodefesa e Saúde Única (One Health)
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-blue-100 text-[#002147]">
+                    🇺🇸 Petição de Interesse Nacional
+                </span>
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-red-50 text-[#9B1C1C]">
+                    Defesa Epidemiológica
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <section id="contexto" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#002147]">O Empreendimento Proposto (Endeavor)</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">
+                    Esta seção delineia a proposta central do pleito: a implementação de sistemas críticos de biossegurança nos Estados Unidos para mitigar a ameaça de doenças zoonóticas em ambientes de interface humano-animal.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-2xl font-bold text-[#9B1C1C] mb-4 flex items-center gap-2">
+                        <span>⚠️</span> A Vulnerabilidade dos EUA
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Existem falhas e vulnerabilidades críticas em operações que lidam diretamente com animais (como criadouros, zoológicos e centros de resgate). A ausência de sistemas preventivos padronizados e rigorosos cria um ambiente propício para o <strong>Spillover Zoonótico</strong> (o salto de patógenos de animais para humanos), catalisando surtos e severas crises de saúde pública.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-[#002147] mb-4 flex items-center gap-2 mt-8">
+                        <span>🛡️</span> A Solução BioShield
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Desenvolver e implementar sistemas de biossegurança, prevenção de zoonoses e gestão de riscos baseados no conceito <em>One Health</em> (Saúde Única). O foco é estabelecer protocolos de defesa biológica robustos para operações envolvendo vida selvagem, animais exóticos e a interface humano-animal em todo o território americano.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h4 class="text-center text-sm font-bold text-gray-500 uppercase tracking-wider mb-6">Projeção de Mitigação de Risco (Modelo One Health)</h4>
+                    <div class="chart-container">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-gray-400 mt-4">Simulação conceitual baseada em modelos de implementação de biossegurança ativa vs. protocolos convencionais reativos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pilares" class="scroll-mt-24 bg-[#002147] text-white rounded-3xl p-8 md:p-12 shadow-xl">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold">Os 5 Pilares de Implementação</h2>
+                <p class="mt-4 text-blue-200 max-w-3xl mx-auto text-lg">
+                    A metodologia tática desenhada por André Madsen para neutralizar riscos biológicos. Interaja com os módulos abaixo para compreender o fluxo operacional do sistema.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="w-full md:w-1/3 flex flex-col gap-3" id="pillar-buttons">
+                </div>
+
+                <div class="w-full md:w-2/3 bg-white text-gray-800 rounded-xl p-8 shadow-inner relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-5 text-8xl" id="pillar-icon-bg">📋</div>
+                    <h3 id="pillar-title" class="text-3xl font-bold text-[#002147] mb-4 relative z-10">1. Avaliação de Risco</h3>
+                    <p id="pillar-desc" class="text-lg text-gray-600 leading-relaxed relative z-10">
+                        Auditoria meticulosa de vulnerabilidades estruturais e processuais nas instalações. Identificação de pontos cegos na entrada de animais, quarentena e design de recintos.
+                    </p>
+                    <div class="mt-8 pt-6 border-t border-gray-200 relative z-10">
+                        <h4 class="text-sm font-bold text-gray-400 uppercase mb-2">Objetivo Estratégico</h4>
+                        <p id="pillar-goal" class="text-[#9B1C1C] font-medium">Mapear a zona de contágio antes que o patógeno seja introduzido.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#002147]">Espectro de Impacto Nacional</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">
+                    A abrangência do empreendimento vai além de uma única instituição. A visualização abaixo detalha as vertentes da sociedade americana diretamente protegidas e beneficiadas pela atuação do especialista.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <div class="chart-container">
+                    <canvas id="impactChart"></canvas>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-[#002147] border-b pb-4">Ganhos em Escala para os EUA</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-1">📉</span>
+                            <div>
+                                <strong class="block text-gray-800">Redução de Surtos (Spillover)</strong>
+                                <span class="text-gray-600">Queda drástica no risco de patógenos animais atingirem populações humanas.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-1">🏢</span>
+                            <div>
+                                <strong class="block text-gray-800">Continuidade Institucional</strong>
+                                <span class="text-gray-600">Garantia operacional para zoológicos, centros de reabilitação e instalações de reprodução.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-1">🦅</span>
+                            <div>
+                                <strong class="block text-gray-800">Proteção da Biodiversidade</strong>
+                                <span class="text-gray-600">Salvaguarda de espécies nativas e exóticas contra epidemias dizimadoras.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-1">💰</span>
+                            <div>
+                                <strong class="block text-gray-800">Mitigação Econômica</strong>
+                                <span class="text-gray-600">Prevenção de perdas financeiras massivas associadas a bloqueios sanitários e erradicação de plantéis.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="dhanasar" class="scroll-mt-24 mb-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#002147]">Análise Jurídica: Matter of Dhanasar</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">
+                    A fundamentação estrutural que qualifica o perfil de André Madsen para a dispensa da certificação de trabalho (NIW), comprovando o alinhamento de sua expertise com os interesses supremos dos Estados Unidos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="interactive-card bg-white p-8 rounded-2xl shadow-sm border-t-4 border-[#002147]">
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Prong 1: Mérito e Importância Nacional</h3>
+                    <p class="text-sm text-gray-500 font-semibold mb-4 uppercase tracking-wider">A Relevância da Missão</p>
+                    <p class="text-gray-700 leading-relaxed">
+                        O controle de zoonoses não beneficia apenas uma clínica isolada. A prevenção de surtos (spillover) protege diretamente a <strong>saúde pública nacional e a economia dos EUA</strong>. É uma resposta estratégica e imediata a uma vulnerabilidade crítica de segurança biológica do país.
+                    </p>
+                </div>
+
+                <div class="interactive-card bg-white p-8 rounded-2xl shadow-sm border-t-4 border-[#4A5568]">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Prong 2: Bem Posicionado para Avançar</h3>
+                    <p class="text-sm text-gray-500 font-semibold mb-4 uppercase tracking-wider">A Capacidade de Execução</p>
+                    <p class="text-gray-700 leading-relaxed">
+                        André possui experiência técnica singular e histórico comprovado de sucesso em medicina de animais selvagens. Sua expertise em biossegurança atesta a <strong>capacidade prática de transformar teoria acadêmica em sistemas operacionais eficazes no campo</strong>.
+                    </p>
+                </div>
+
+                <div class="interactive-card bg-white p-8 rounded-2xl shadow-sm border-t-4 border-[#9B1C1C]">
+                    <div class="text-4xl mb-4">🇺🇸</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Prong 3: Dispensa da Certificação</h3>
+                    <p class="text-sm text-gray-500 font-semibold mb-4 uppercase tracking-wider">O Benefício do Waiver</p>
+                    <p class="text-gray-700 leading-relaxed">
+                        A urgência de proteger os EUA contra ameaças biológicas torna impraticável exigir uma vaga de emprego formal. O benefício de ter um especialista operando livremente na prevenção de surtos <strong>supera largamente o interesse padrão de proteger o mercado de trabalho local</strong>.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center border-t border-gray-800">
+        <p class="text-sm">Baseado no Plano Executivo e Análise DPA do processo EB-2 NIW de André Henrique Falconi Madsen.</p>
+        <p class="text-xs mt-2 opacity-50">Desenvolvido para demonstração de arquitetura de informação.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const pillarData = [
+            {
+                id: 1,
+                icon: "📋",
+                title: "1. Avaliação de Risco",
+                desc: "Auditoria de vulnerabilidades em instalações de vida selvagem e exóticos. Foco na identificação de falhas em pontos críticos de contato humano-animal.",
+                goal: "Mapear o risco antes da exposição."
+            },
+            {
+                id: 2,
+                icon: "📐",
+                title: "2. Design de Protocolos",
+                desc: "Criação de rotinas seguras e fluxos operacionais de biossegurança adaptados à realidade de cada centro de reabilitação ou zoológico.",
+                goal: "Estruturar barreiras sanitárias robustas."
+            },
+            {
+                id: 3,
+                icon: "🧑‍⚕️",
+                title: "3. Treinamento da Força de Trabalho",
+                desc: "Capacitação imersiva de equipes veterinárias e de manejo para execução padronizada de práticas baseadas no conceito One Health.",
+                goal: "Garantir a execução humana impecável."
+            },
+            {
+                id: 4,
+                icon: "🔬",
+                title: "4. Monitoramento Estruturado",
+                desc: "Implementação de sistemas de vigilância contínua para detecção precoce de anomalias sanitárias nos plantéis.",
+                goal: "Identificação imediata de ameaças (Early Warning)."
+            },
+            {
+                id: 5,
+                icon: "🚨",
+                title: "5. Resposta a Surtos",
+                desc: "Desenvolvimento de planos de contingência para contenção rápida e coordenada em caso de detecção de patógenos com potencial zoonótico.",
+                goal: "Neutralização rápida para evitar o spillover."
+            }
+        ];
+
+        let currentPillar = 1;
+
+        function renderPillarButtons() {
+            const container = document.getElementById('pillar-buttons');
+            container.innerHTML = '';
+            
+            pillarData.forEach(pillar => {
+                const btn = document.createElement('button');
+                const isActive = pillar.id === currentPillar;
+                
+                btn.className = `w-full text-left px-6 py-4 rounded-xl border-2 font-bold transition-all duration-200 flex items-center gap-3 ${isActive ? 'active-tab shadow-lg transform scale-[1.02]' : 'inactive-tab hover:bg-gray-50'}`;
+                btn.innerHTML = `<span class="text-xl">${pillar.icon}</span> ${pillar.title}`;
+                
+                btn.onclick = () => updatePillarContent(pillar.id);
+                container.appendChild(btn);
+            });
+        }
+
+        function updatePillarContent(id) {
+            currentPillar = id;
+            const data = pillarData.find(p => p.id === id);
+            
+            const titleEl = document.getElementById('pillar-title');
+            const descEl = document.getElementById('pillar-desc');
+            const goalEl = document.getElementById('pillar-goal');
+            const iconBgEl = document.getElementById('pillar-icon-bg');
+
+            titleEl.style.opacity = 0;
+            descEl.style.opacity = 0;
+            goalEl.style.opacity = 0;
+
+            setTimeout(() => {
+                titleEl.textContent = data.title;
+                descEl.textContent = data.desc;
+                goalEl.textContent = data.goal;
+                iconBgEl.textContent = data.icon;
+
+                titleEl.style.opacity = 1;
+                descEl.style.opacity = 1;
+                goalEl.style.opacity = 1;
+                
+                renderPillarButtons();
+            }, 150);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPillarButtons();
+            
+            const documentStyle = getComputedStyle(document.documentElement);
+            const colorNavy = '#002147';
+            const colorRed = '#9B1C1C';
+            const colorGrey = '#4A5568';
+            const colorLightBlue = '#E1EFFE';
+
+            const ctxRisk = document.getElementById('riskChart').getContext('2d');
+            new Chart(ctxRisk, {
+                type: 'bar',
+                data: {
+                    labels: ['Instalações Convencionais', 'Implementação BioShield (One Health)'],
+                    datasets: [
+                        {
+                            label: 'Risco de Exposição a Patógenos',
+                            data: [85, 20],
+                            backgroundColor: colorRed,
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Eficiência de Contenção (Barreira)',
+                            data: [30, 95],
+                            backgroundColor: colorNavy,
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12, font: { family: 'Inter' } } },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) { return context.dataset.label + ': ' + context.parsed.y + '%'; }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, max: 100, ticks: { callback: function(value) { return value + "%" } } }
+                    }
+                }
+            });
+
+            const ctxImpact = document.getElementById('impactChart').getContext('2d');
+            new Chart(ctxImpact, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'Clínicas de Animais Exóticos',
+                        'Zoológicos & Aquários',
+                        'Centros de Reabilitação',
+                        'Programas de Conservação',
+                        'Criadouros Especializados'
+                    ],
+                    datasets: [{
+                        data: [25, 25, 20, 15, 15],
+                        backgroundColor: [
+                            colorNavy,
+                            '#1E3A8A', 
+                            '#3B82F6', 
+                            colorGrey,
+                            colorRed
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '65%',
+                    plugins: {
+                        legend: { 
+                            position: 'right',
+                            labels: {
+                                font: { family: 'Inter', size: 12 },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.parsed + '% Foco de Atuação';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
