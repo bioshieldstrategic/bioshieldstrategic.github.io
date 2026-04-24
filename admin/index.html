@@ -281,7 +281,7 @@
                 <p style="font-size: 13px; color: var(--slate-grey); margin-bottom: 15px;">
                     Ao preencher o português e clicar em "Traduzir", o conteúdo será automaticamente convertido para inglês. Você pode editar a tradução manualmente após.
                 </p>
-                <button type="button" class="btn" style="background: var(--slate-grey); margin-bottom: 15px;" onclick="translateArticle()">🔄 Traduzir Conteúdo</button>
+                <button type="button" class="btn" style="background: var(--slate-grey); margin-bottom: 15px;" onclick="window.translateArticle()">🔄 Traduzir Conteúdo</button>
                 <div class="form-group">
                     <label>Article Title</label>
                     <input type="text" id="modal-en-title" placeholder="Article title in English">
@@ -740,6 +740,10 @@ function translateArticle() {
                 closeArticleModal();
             }
         };
+
+        window.translateArticle = translateArticle;
+        window.showToast = showToast;
+        window.translateSentence = translateSentence;
     </script>
 </body>
 </html>
