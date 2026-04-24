@@ -313,6 +313,18 @@
         const REPO_NAME = 'bioshieldstrategic.github.io';
         const FILE_PATH = 'data/content.json';
 
+        function showToast(message, type) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast ' + type;
+            toast.textContent = message;
+            container.appendChild(toast);
+            setTimeout(function() {
+                toast.classList.add('hiding');
+                setTimeout(function() { toast.remove(); }, 300);
+            }, type === 'success' ? 4000 : 3000);
+        }
+
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const pass = document.getElementById('admin-pass').value;
