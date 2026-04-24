@@ -399,5 +399,5 @@ input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-rad
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center 25%;
 }

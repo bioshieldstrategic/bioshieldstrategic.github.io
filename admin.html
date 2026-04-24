@@ -8,153 +8,37 @@ title: Administração do site | BioShield Strategic
         <div class="card admin-card" id="login-card">
             <h2>Login</h2>
             <p>Esta área permite editar o conteúdo do site. A senha é usada para proteger o acesso básico no navegador.</p>
-            <input id="admin-password" type="password" placeholder="Senha" class="admin-input">
+            <input id="admin-password" type="password" placeholder="Digite sua senha" class="admin-input">
             <button id="admin-login" class="btn">Entrar</button>
-            <p style="margin-top: 18px; color: var(--slate-grey); font-size: 14px;">Lembrete: este sistema salva no navegador e pode fazer commit no GitHub.</p>
         </div>
 
         <div class="card admin-card hidden" id="editor-card">
             <h2>Editor de Conteúdo</h2>
-            
-            <div class="admin-tabs">
-                <button class="tab-btn active" data-tab="hero">Hero</button>
-                <button class="tab-btn" data-tab="about">Sobre</button>
-                <button class="tab-btn" data-tab="articles">Artigos</button>
-                <button class="tab-btn" data-tab="contact">Contato</button>
-            </div>
-
-            <form id="admin-form">
-                <div id="tab-hero" class="tab-panel active">
-                    <h3>Seção Hero (PT)</h3>
-                    <div class="form-group">
-                        <label>Título</label>
-                        <input id="hero-pt-title" class="admin-input" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Subtítulo</label>
-                        <textarea id="hero-pt-subtitle" class="admin-textarea"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Texto do Botão</label>
-                        <input id="hero-pt-btn" class="admin-input" type="text">
-                    </div>
-                    
-                    <h3>Seção Hero (EN)</h3>
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input id="hero-en-title" class="admin-input" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Subtitle</label>
-                        <textarea id="hero-en-subtitle" class="admin-textarea"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Button Text</label>
-                        <input id="hero-en-btn" class="admin-input" type="text">
-                    </div>
-                </div>
-
-                <div id="tab-about" class="tab-panel">
-                    <h3>Seção Sobre (PT)</h3>
-                    <div class="form-group">
-                        <label>Título</label>
-                        <input id="about-pt-title" class="admin-input" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Primeiro Parágrafo (suporta HTML)</label>
-                        <textarea id="about-pt-content1" class="admin-textarea" rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Segundo Parágrafo</label>
-                        <textarea id="about-pt-content2" class="admin-textarea" rows="4"></textarea>
-                    </div>
-                    
-                    <h3>Seção Sobre (EN)</h3>
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input id="about-en-title" class="admin-input" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>First Paragraph (supports HTML)</label>
-                        <textarea id="about-en-content1" class="admin-textarea" rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Second Paragraph</label>
-                        <textarea id="about-en-content2" class="admin-textarea" rows="4"></textarea>
-                    </div>
-                </div>
-
-                <div id="tab-articles" class="tab-panel">
-                    <h3>Artigos</h3>
-                    <p style="color: var(--slate-grey); margin-bottom: 20px;">Edite os artigos existentes. Cada artigo possui versão em PT e EN.</p>
-                    <div id="articles-editor"></div>
-                </div>
-
-                <div id="tab-contact" class="tab-panel">
-                    <h3>Contato (PT)</h3>
-                    <div class="form-group">
-                        <label>Título</label>
-                        <input id="contact-pt-title" class="admin-input" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Texto</label>
-                        <textarea id="contact-pt-text" class="admin-textarea" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Telefone</label>
-                        <input id="contact-pt-phone" class="admin-input" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>E-mail</label>
-                        <input id="contact-pt-email" class="admin-input" type="text">
-                    </div>
-                    
-                    <h3>Contato (EN)</h3>
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input id="contact-en-title" class="admin-input" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>Text</label>
-                        <textarea id="contact-en-text" class="admin-textarea" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input id="contact-en-phone" class="admin-input" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>E-mail</label>
-                        <input id="contact-en-email" class="admin-input" type="text">
-                    </div>
-                </div>
-
-                <div class="admin-actions">
-                    <button type="submit" class="btn">Salvar Localmente</button>
-                    <button type="button" id="admin-export" class="btn btn-secondary">Exportar JSON</button>
-                    <button type="button" id="admin-github" class="btn btn-github">Publicar no GitHub</button>
-                </div>
-            </form>
-        </div>
-
-        <div class="card admin-card hidden" id="github-card">
-            <h2>Publicar no GitHub</h2>
-            <p>Para fazer commit diretamente no repositório, você precisa fornecer um <strong>GitHub Personal Access Token (PAT)</strong>.</p>
-            <p style="font-size: 13px; color: var(--slate-grey); margin: 15px 0;">O PAT deve ter permissão <code>repo</code> para poder fazer commit. Gere em: GitHub Settings > Developer settings > Personal access tokens</p>
-            <div class="form-group">
-                <label>GitHub PAT</label>
-                <input id="github-pat" type="password" class="admin-input" placeholder="ghp_xxxxxxxxxxxx">
-            </div>
-            <div class="form-group">
-                <label>Sha do arquivo atual (para update)</label>
-                <input id="github-sha" type="text" class="admin-input" placeholder="Obtendo automaticamente..." readonly>
-            </div>
-            <div class="admin-actions">
-                <button id="github-commit" class="btn btn-github">Confirmar Commit</button>
-                <button id="github-cancel" class="btn btn-secondary">Cancelar</button>
-            </div>
-            <div id="github-status" style="margin-top: 20px;"></div>
+            <p style="color: var(--slate-grey); margin-bottom: 20px;">Acesse o painel completo em <a href="/admin/" style="color: var(--deep-navy); font-weight: 600;">/admin/</a></p>
         </div>
     </div>
 </section>
 
-<script src="/assets/js/admin.js"></script>
+<script>
+    const passwordInput = document.getElementById('admin-password');
+    const loginButton = document.getElementById('admin-login');
+    const loginCard = document.getElementById('login-card');
+    const editorCard = document.getElementById('editor-card');
+
+    passwordInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            handleLogin();
+        }
+    });
+
+    loginButton.addEventListener('click', handleLogin);
+
+    function handleLogin() {
+        const value = passwordInput.value.trim();
+        if (value === 'bio2026') {
+            window.location.href = '/admin/';
+        } else {
+            alert('Senha incorreta.');
+        }
+    }
+</script>
