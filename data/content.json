@@ -1,38 +1,128 @@
 {
-  "site": {
-    "hero": {
-      "title": "Estratégia Avançada em Saúde Única (One Health)",
-      "subtitle": "Consultoria especializada em Biossegurança, Conformidade Regulatória e Controle de Zoonoses. Liderança técnica voltada à segurança sanitária global e coordenação federal de saúde pública.",
-      "buttonText": "Consulte Nosso Plano Estratégico",
-      "buttonLink": "/#sobre"
+  "pt": {
+    "site": {
+      "hero": {
+        "title": "Liderança Científica em Controle de Zoonoses",
+        "subtitle": "Desenvolvemos estratégias robustas e baseadas em ciência para prevenção, monitoramento e resposta a ameaças biológicas que envolvem a interface entre pessoas, animais e meio ambiente.",
+        "buttonText": "Conheça Nossa Abordagem"
+      },
+      "about": {
+        "title": "Autoridade em Saúde Pública Transfronteiriça",
+        "content1": "A BioShield Strategic, sob a diretoria técnica do <strong>Dr. André Madsen</strong>, atua no epicentro da interface humano-animal-ambiente (One Health). Nossa missão é prover soluções justificáveis institucionalmente, alinhadas socialmente e economicamente viáveis para o enfrentamento de surtos e a proteção da saúde pública em nível federal e internacional.",
+        "content2": "Nossa metodologia combina inteligência epidemiológica, modelagem de dados e governança científica para garantir que organizações e governos estejam preparados para os desafios sanitários do século XXI."
+      },
+      "standards": {
+        "title": "Rigor Científico e Conformidade Internacional",
+        "subtitle": "Nossas estratégias são fundamentadas nos protocolos mais rigorosos das principais autoridades globais em biossegurança e saúde pública, garantindo que as intervenções possuam <strong>mérito científico e relevância transnacional</strong>."
+      },
+      "contact": {
+        "title": "Contato e Consultoria Estratégica",
+        "text": "Para parcerias estratégicas, consultorias especializadas e implementações de biossegurança em instituições.",
+        "phone": "11 99424-9797",
+        "email": "contato@bioshieldstrategic.com"
+      }
     },
-    "about": {
-      "title": "Excelência em Governança e Inteligência Epidemiológica",
-      "content": "A BioShield Strategic, liderada pelo Dr. André Madsen, atua no epicentro da interface humano-animal-ambiente. Nossa missão é prover soluções justificáveis institucionalmente, alinhadas socialmente e economicamente viáveis para o enfrentamento de surtos e a proteção da saúde pública em nível federal e internacional."
-    },
-    "contact": {
-      "phone": "11 99424-9797",
-      "email": "contato@bioshieldstrategic.com"
+    "articles": [
+      {
+        "id": "1",
+        "title": "Conformidade Regulatória e Coordenação Federal",
+        "summary": "Otimização de protocolos de saúde animal e humana para atendimento a exigências federais e internacionais.",
+        "content": "<h3>Governança e Regulação</h3><p>O sucesso no controle de zoonoses depende de uma coordenação federal robusta e do estrito cumprimento da conformidade regulatória. Nossa consultoria foca na estruturação de protocolos que garantem a segurança sanitária em larga escala, mitigando o custo social e econômico de surtos inesperados.</p><h3>Coordenação Federal</h3><p>A integração entre agências como CDC, USDA e organizações internacionais como OMS e WOAH é essencial para criar um sistema de defesa biológica coeso e eficaz. O Dr. André Madsen possui experiência na articulação entre esses órgãos para garantir alinhamento estratégico.</p>"
+      },
+      {
+        "id": "2",
+        "title": "A Interface Humano-Animal-Ambiente (One Health)",
+        "summary": "A importância da visão integrada para o reconhecimento de impactos e prevenção de doenças emergentes.",
+        "content": "<h3>Saúde Única Integrada</h3><p>Reconhecemos que o impacto de patógenos transfronteiriços ocorre na complexa interface entre humanos, animais e o ambiente. O Dr. André Madsen aplica inteligência epidemiológica para decodificar estas interações, transformando o enfrentamento de surtos em uma estratégia de biodefesa institucionalmente necessária.</p><h3>Modelo One Health</h3><p>Mais de 6 em cada 10 doenças infecciosas conhecidas em humanos têm origem animal. Essa realidade demonstra por que prevenir a transmissão entre espécies é uma prioridade de saúde pública global. A abordagem One Health integra vigilância animal, humana e ambiental para detecção precoce e resposta rápida.</p>"
+      },
+      {
+        "id": "3",
+        "title": "Justificativa Econômica e Impacto na Saúde Pública",
+        "summary": "Análise da viabilidade e do mérito das intervenções estratégicas em biossegurança e práticas preventivas.",
+        "content": "<h3>Valor Estratégico</h3><p>Intervenções em biossegurança são economicamente justificáveis e institucionalmente alinhadas às metas de crescimento e estabilidade de uma nação. Nossa metodologia foca na implementação de práticas de prevenção de doenças que protegem a infraestrutura produtiva e a integridade da saúde comunitária.</p><h3>Mitigação de Custos</h3><p>A prevenção de surtos zoonóticos evita perdas financeiras massivas associadas a bloqueios sanitários, erradicação de plantéis e crises de saúde pública. O retorno sobre investimento em biossegurança estruturada demonstra economia significativa em relação aos custos de resposta a emergências sanitárias.</p>"
+      },
+      {
+        "id": "4",
+        "title": "Biossegurança para Instalações com Animais",
+        "summary": "Práticas claras, áreas bem desenhadas e rotinas consistentes para evitar a entrada e o avanço de agentes infecciosos.",
+        "content": "<h3>Biossegurança Conceitual</h3><p>Esta etapa define onde e como as operações acontecem. Inclui a avaliação da localização, o fluxo de pessoas e animais, e a identificação de zonas de risco em instalações que lidam com animais silvestres, exóticos ou de produção.</p><h3>Biossegurança Estrutural</h3><p>Corresponde ao desenho físico da instalação: áreas limpas e contaminadas separadas, recintos de quarentena, superfícies laváveis e barreiras de proteção que impeçam a propagação de patógenos entre setores.</p><h3>Biossegurança Operacional</h3><p>Refere-se aos processos do dia a dia: uso correto de EPIs, limpeza e desinfecção de superfícies, gerenciamento de resíduos biológicos, treinamento contínuo de equipes e protocolos de resposta a incidentes sanitários.</p>"
+      },
+      {
+        "id": "5",
+        "title": "Metodologia de Implementação em 5 Etapas",
+        "summary": "O modelo estruturado de Biossegurança Ativa do Dr. André Madsen para instituições dos EUA.",
+        "content": "<h3>1. Avaliação de Risco</h3><p>Auditoria meticulosa de vulnerabilidades estruturais e processuais nas instalações. Identificação de pontos cegos na entrada de animais, procedimentos de quarentena e design de recintos. O objetivo é mapear a zona de contágio antes que o patógeno seja introduzido no ambiente institucional.</p><h3>2. Design de Protocolos</h3><p>Criação de rotinas seguras e fluxos operacionais de biossegurança adaptados à realidade de cada centro de reabilitação, zoológico ou instalação de vida selvagem. Estruturar barreiras sanitárias robustas que funcionem na prática diária.</p><h3>3. Treinamento da Força de Trabalho</h3><p>Capacitação imersiva de equipes veterinárias e de manejo para execução padronizada de práticas baseadas no conceito One Health. Garantir que todos os profissionais entendam e apliquem os protocolos de forma consistente.</p><h3>4. Monitoramento Estruturado</h3><p>Implementação de sistemas de vigilância contínua para detecção precoce de anomalias sanitárias nos plantéis. Sistema de Early Warning que permita identificação imediata de ameaças antes que se tornem surtos.</p><h3>5. Resposta a Surtos</h3><p>Desenvolvimento de planos de contingência para contenção rápida e coordenada em caso de detecção de patógenos com potencial zoonótico. Neutralização rápida para evitar o spillover e proteger a interface humano-animal.</p>"
+      }
+    ],
+    "nav": {
+      "home": "Home",
+      "about": "Sobre",
+      "articles": "Artigos",
+      "contact": "Contato",
+      "admin": "Admin"
     }
   },
-  "articles": [
-    {
-      "id": "1",
-      "title": "Conformidade Regulatória e Coordenação Federal",
-      "summary": "Otimização de protocolos de saúde animal e humana para atendimento a exigências federais e internacionais.",
-      "content": "<h3>Governança e Regulação</h3><p>O sucesso no controle de zoonoses depende de uma coordenação federal robusta e do estrito cumprimento da conformidade regulatória. Nossa consultoria foca na estruturação de protocolos que garantem a segurança sanitária em larga escala, mitigando o custo social e econômico de surtos inesperados.</p>"
+  "en": {
+    "site": {
+      "hero": {
+        "title": "Scientific Leadership in Zoonosis Control",
+        "subtitle": "We develop robust, science-based strategies for prevention, monitoring, and response to biological threats involving the interface between people, animals, and the environment.",
+        "buttonText": "Discover Our Approach"
+      },
+      "about": {
+        "title": "Cross-Border Public Health Authority",
+        "content1": "BioShield Strategic, under the technical direction of <strong>Dr. André Madsen</strong>, operates at the epicenter of the human-animal-environment interface (One Health). Our mission is to provide institutionally justifiable, socially aligned, and economically viable solutions for outbreak response and public health protection at the federal and international levels.",
+        "content2": "Our methodology combines epidemiological intelligence, data modeling, and scientific governance to ensure that organizations and governments are prepared for the sanitary challenges of the 21st century."
+      },
+      "standards": {
+        "title": "Scientific Rigor and International Compliance",
+        "subtitle": "Our strategies are based on the most rigorous protocols from major global authorities in biosafety and public health, ensuring that interventions have <strong>scientific merit and transnational relevance</strong>."
+      },
+      "contact": {
+        "title": "Contact and Strategic Consulting",
+        "text": "For strategic partnerships, specialized consulting, and biosafety implementations in institutions.",
+        "phone": "+55 11 99424-9797",
+        "email": "contato@bioshieldstrategic.com"
+      }
     },
-    {
-      "id": "2",
-      "title": "A Interface Humano-Animal-Ambiente (One Health)",
-      "summary": "A importância da visão integrada para o reconhecimento de impactos e prevenção de doenças emergentes.",
-      "content": "<h3>Saúde Única Integrada</h3><p>Reconhecemos que o impacto de patógenos transfronteiriços ocorre na complexa interface entre humanos, animais e o ambiente. O Dr. André Madsen aplica inteligência epidemiológica para decodificar estas interações, transformando o enfrentamento de surtos em uma estratégia de biodefesa institucionalmente necessária.</p>"
-    },
-    {
-      "id": "3",
-      "title": "Justificativa Econômica e Impacto na Saúde Pública",
-      "summary": "Análise da viabilidade e do mérito das intervenções estratégicas em biossegurança e práticas preventivas.",
-      "content": "<h3>Valor Estratégico</h3><p>Intervenções em biossegurança são economicamente justificáveis e institucionalmente alinhadas às metas de crescimento e estabilidade de uma nação. Nossa metodologia foca na implementação de práticas de prevenção de doenças que protegem a infraestrutura produtiva e a integridade da saúde comunitária.</p>"
+    "articles": [
+      {
+        "id": "1",
+        "title": "Regulatory Compliance and Federal Coordination",
+        "summary": "Optimization of animal and human health protocols for meeting federal and international requirements.",
+        "content": "<h3>Governance and Regulation</h3><p>Success in zoonosis control depends on robust federal coordination and strict regulatory compliance. Our consulting focuses on structuring protocols that guarantee large-scale sanitary safety, mitigating the social and economic costs of unexpected outbreaks.</p><h3>Federal Coordination</h3><p>Integration between agencies such as CDC, USDA, and international organizations like WHO and WOAH is essential to create a cohesive, effective biological defense system. Dr. André Madsen has experience in coordinating between these agencies to ensure strategic alignment.</p>"
+      },
+      {
+        "id": "2",
+        "title": "The Human-Animal-Environment Interface (One Health)",
+        "summary": "The importance of an integrated view for recognizing impacts and preventing emerging diseases.",
+        "content": "<h3>Integrated One Health</h3><p>We recognize that the impact of transboundary pathogens occurs at the complex interface between humans, animals, and the environment. Dr. André Madsen applies epidemiological intelligence to decode these interactions, transforming outbreak response into an institutionally necessary biodefense strategy.</p><h3>One Health Model</h3><p>More than 6 out of 10 known infectious diseases in humans have animal origins. This reality demonstrates why preventing transmission between species is a global public health priority. The One Health approach integrates animal, human, and environmental surveillance for early detection and rapid response.</p>"
+      },
+      {
+        "id": "3",
+        "title": "Economic Justification and Public Health Impact",
+        "summary": "Analysis of the feasibility and merit of strategic interventions in biosafety and preventive practices.",
+        "content": "<h3>Strategic Value</h3><p>Biosafety interventions are economically justifiable and institutionally aligned with a nation's growth and stability goals. Our methodology focuses on implementing disease prevention practices that protect productive infrastructure and community health integrity.</p><h3>Cost Mitigation</h3><p>Preventing zoonotic outbreaks avoids massive financial losses associated with sanitary blockages, herd culling, and public health crises. The return on investment in structured biosafety demonstrates significant savings compared to emergency sanitary response costs.</p>"
+      },
+      {
+        "id": "4",
+        "title": "Biosafety for Animal Facilities",
+        "summary": "Clear practices, well-designed areas, and consistent routines to prevent the entry and spread of infectious agents.",
+        "content": "<h3>Conceptual Biosafety</h3><p>This stage defines where and how operations occur. It includes location assessment, flow of people and animals, and identification of risk zones in facilities handling wildlife, exotic animals, or livestock.</p><h3>Structural Biosafety</h3><p>Corresponds to the physical layout of the facility: separate clean and contaminated areas, quarantine pens, washable surfaces, and protective barriers that prevent pathogen spread between sectors.</p><h3>Operational Biosafety</h3><p>Refers to day-to-day processes: correct use of PPE, surface cleaning and disinfection, biological waste management, continuous team training, and incident response protocols for sanitary emergencies.</p>"
+      },
+      {
+        "id": "5",
+        "title": "5-Step Implementation Methodology",
+        "summary": "Dr. André Madsen's Active Biosafety structured model for U.S. institutions.",
+        "content": "<h3>1. Risk Assessment</h3><p>Meticulous audit of structural and procedural vulnerabilities in facilities. Identification of blind spots in animal entry, quarantine procedures, and enclosure design. The goal is to map the contagion zone before the pathogen is introduced into the institutional environment.</p><h3>2. Protocol Design</h3><p>Creation of safe routines and biosafety operational flows adapted to the reality of each rehabilitation center, zoo, or wildlife facility. Build robust sanitary barriers that work in daily practice.</p><h3>3. Workforce Training</h3><p>Immersive training for veterinary and handling teams for standardized execution of One Health-based practices. Ensure all professionals understand and consistently apply the protocols.</p><h3>4. Structured Monitoring</h3><p>Implementation of continuous surveillance systems for early detection of sanitary anomalies in herds. Early Warning system that enables immediate identification of threats before they become outbreaks.</p><h3>5. Outbreak Response</h3><p>Development of contingency plans for rapid, coordinated containment in case of detection of pathogens with zoonotic potential. Rapid neutralization to prevent spillover and protect the human-animal interface.</p>"
+      }
+    ],
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "articles": "Articles",
+      "contact": "Contact",
+      "admin": "Admin"
     }
-  ]
+  }
 }

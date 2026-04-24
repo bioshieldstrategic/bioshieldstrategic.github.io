@@ -11,15 +11,15 @@
         .btn-save { background: #28a745; margin-top: 20px; }
         .btn-add { background: var(--deep-navy); margin-bottom: 20px; }
         .btn-delete { background: var(--security-red); padding: 8px 16px; margin-top: 10px; }
-        input, textarea { margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; border-radius: 4px; }
+        input, textarea { margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; border-radius: 4px; width: 100%; box-sizing: border-box; }
     </style>
 </head>
 <body style="background: #f0f2f5;">
 
-    <!-- Login Context -->
     <div id="login-area" class="admin-login container">
         <div class="card" style="margin-top: 100px;">
             <h2>Área Administrativa</h2>
+            <p style="color: var(--slate-grey); margin-bottom: 20px;">Acesse com sua senha para editar o conteúdo do site.</p>
             <form id="login-form">
                 <input type="password" id="admin-pass" placeholder="Senha de Acesso" required>
                 <button type="submit" class="btn">Entrar</button>
@@ -27,12 +27,15 @@
         </div>
     </div>
 
-    <!-- Admin Dashboard -->
     <div id="admin-dashboard" class="hidden">
         <header class="header">
             <div class="container">
-                <span class="brand">Admin Panel</span>
-                <button onclick="logout()" class="btn" style="padding: 8px 16px;">Sair</button>
+                <a href="/" class="brand">BioShield Strategic</a>
+                <nav style="display: flex; gap: 20px; align-items: center;">
+                    <span style="color: var(--slate-grey); font-size: 14px;">Modo Admin</span>
+                    <a href="/" class="btn" style="padding: 8px 16px; font-size: 14px;">Ver Site</a>
+                    <button onclick="logout()" class="btn btn-secondary" style="padding: 8px 16px; font-size: 14px;">Sair</button>
+                </nav>
             </div>
         </header>
 
@@ -42,32 +45,40 @@
                 <div class="tab-link" onclick="showTab('articles-manager')">Gerenciar Artigos</div>
             </div>
 
-            <!-- Tab 1: Site Config -->
             <div id="site-config" class="tab-content active">
-                <h3>Configurações Globais (Hero & Sobre)</h3>
+                <h3>Configurações Globais - Hero &amp; Sobre</h3>
                 <div class="form-group">
-                    <label>Título Hero</label>
-                    <input type="text" id="site-hero-title">
+                    <label>Título Hero (PT)</label>
+                    <input type="text" id="site-hero-title-pt">
                 </div>
                 <div class="form-group">
-                    <label>Subtítulo Hero</label>
-                    <textarea id="site-hero-subtitle" rows="3"></textarea>
+                    <label>Subtítulo Hero (PT)</label>
+                    <textarea id="site-hero-subtitle-pt" rows="3"></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Telefone Contato</label>
-                    <input type="text" id="site-contact-phone">
+                    <label>Título Hero (EN)</label>
+                    <input type="text" id="site-hero-title-en">
+                </div>
+                <div class="form-group">
+                    <label>Subtitle Hero (EN)</label>
+                    <textarea id="site-hero-subtitle-en" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Telefone Contato (PT)</label>
+                    <input type="text" id="site-contact-phone-pt">
+                </div>
+                <div class="form-group">
+                    <label>Telefone Contato (EN)</label>
+                    <input type="text" id="site-contact-phone-en">
                 </div>
             </div>
 
-            <!-- Tab 2: Articles Manager -->
             <div id="articles-manager" class="tab-content">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <h3>Artigos do Site</h3>
+                    <h3>Artigos do Site (PT / EN)</h3>
                     <button class="btn btn-add" onclick="addNewArticle()">+ Adicionar Novo Artigo</button>
                 </div>
-                <div id="articles-list">
-                    <!-- Cards de edição populados via JS -->
-                </div>
+                <div id="articles-list"></div>
             </div>
 
             <hr style="margin: 40px 0;">
@@ -82,16 +93,22 @@
         const REPO_NAME = 'bioshieldstrategic.github.io';
         const FILE_PATH = 'data/content.json';
 
-        // Fake Login logic (requested as a form with Enter listener)
         document.getElementById('login-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const pass = document.getElementById('admin-pass').value;
-            if (pass === 'admin2026') { // Senha exemplo
+            if (pass === 'bio2026') {
                 document.getElementById('login-area').classList.add('hidden');
                 document.getElementById('admin-dashboard').classList.remove('hidden');
                 loadCurrentContent();
             } else {
                 alert("Senha incorreta.");
+            }
+        });
+
+        document.getElementById('admin-pass').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('login-form').dispatchEvent(new Event('submit'));
             }
         });
 
@@ -111,10 +128,12 @@
                 const response = await fetch('/data/content.json');
                 currentData = await response.json();
                 
-                // Populate Site Config
-                document.getElementById('site-hero-title').value = currentData.site.hero.title;
-                document.getElementById('site-hero-subtitle').value = currentData.site.hero.subtitle;
-                document.getElementById('site-contact-phone').value = currentData.site.contact.phone;
+                document.getElementById('site-hero-title-pt').value = currentData.pt.site.hero.title || '';
+                document.getElementById('site-hero-subtitle-pt').value = currentData.pt.site.hero.subtitle || '';
+                document.getElementById('site-hero-title-en').value = currentData.en.site.hero.title || '';
+                document.getElementById('site-hero-subtitle-en').value = currentData.en.site.hero.subtitle || '';
+                document.getElementById('site-contact-phone-pt').value = currentData.pt.site.contact.phone || '';
+                document.getElementById('site-contact-phone-en').value = currentData.en.site.contact.phone || '';
 
                 renderArticles();
             } catch (err) {
@@ -124,64 +143,75 @@
 
         function renderArticles() {
             const list = document.getElementById('articles-list');
-            list.innerHTML = currentData.articles.map((art, index) => `
+            list.innerHTML = currentData.pt.articles.map((art, index) => {
+                const enArt = currentData.en.articles[index] || {};
+                return `
                 <div class="article-edit-card">
-                    <label>Título do Artigo</label>
-                    <input type="text" value="${art.title}" onchange="updateArticle(${index}, 'title', this.value)">
+                    <h4 style="color: var(--deep-navy); margin-bottom: 15px;">Artigo ${art.id}</h4>
+                    <p style="font-size: 12px; color: var(--slate-grey); font-weight: 700;">PORTUGUÊS</p>
+                    <label>Título</label>
+                    <input type="text" value="${art.title}" onchange="updateArticle(${index}, 'pt', 'title', this.value)">
                     <label>Resumo</label>
-                    <textarea onchange="updateArticle(${index}, 'summary', this.value)">${art.summary}</textarea>
-                    <label>Conteúdo Completo (HTML permitido)</label>
-                    <textarea rows="6" onchange="updateArticle(${index}, 'content', this.value)">${art.content}</textarea>
-                    <button class="btn btn-delete" onclick="deleteArticle(${index})">Excluir Artigo</button>
+                    <input type="text" value="${art.summary}" onchange="updateArticle(${index}, 'pt', 'summary', this.value)">
+                    <label>Conteúdo (HTML)</label>
+                    <textarea rows="5" onchange="updateArticle(${index}, 'pt', 'content', this.value)">${art.content}</textarea>
+                    
+                    <p style="font-size: 12px; color: var(--slate-grey); font-weight: 700; margin-top: 20px;">ENGLISH</p>
+                    <label>Title</label>
+                    <input type="text" value="${enArt.title || ''}" onchange="updateArticle(${index}, 'en', 'title', this.value)">
+                    <label>Summary</label>
+                    <input type="text" value="${enArt.summary || ''}" onchange="updateArticle(${index}, 'en', 'summary', this.value)">
+                    <label>Content (HTML)</label>
+                    <textarea rows="5" onchange="updateArticle(${index}, 'en', 'content', this.value)">${enArt.content || ''}</textarea>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
-        function updateArticle(index, field, value) {
-            currentData.articles[index][field] = value;
+        function updateArticle(index, lang, field, value) {
+            currentData[lang].articles[index][field] = value;
         }
 
         function addNewArticle() {
+            const newId = (parseInt(currentData.pt.articles[currentData.pt.articles.length - 1]?.id || 0) + 1).toString();
             const newArt = {
-                id: Date.now().toString(),
+                id: newId,
                 title: "Novo Artigo",
                 summary: "Resumo do artigo...",
                 content: "<h3>Conteúdo</h3><p>Texto aqui...</p>"
             };
-            currentData.articles.unshift(newArt);
+            const newArtEn = {
+                id: newId,
+                title: "New Article",
+                summary: "Article summary...",
+                content: "<h3>Content</h3><p>Text here...</p>"
+            };
+            currentData.pt.articles.push(newArt);
+            currentData.en.articles.push(newArtEn);
             renderArticles();
         }
 
-        function deleteArticle(index) {
-            if (confirm("Deseja excluir este artigo?")) {
-                currentData.articles.splice(index, 1);
-                renderArticles();
-            }
-        }
-
-        // GitHub Integration
         document.getElementById('save-btn').addEventListener('click', async () => {
             const token = prompt("Insira seu GitHub Personal Access Token (PAT) para autorizar o deploy:");
             if (!token) return;
 
             const status = document.getElementById('status-msg');
             status.innerText = "Preparando commit...";
-            status.style.color = "blue";
+            status.style.color = "#002147";
 
             try {
-                // Update specific site fields before saving
-                currentData.site.hero.title = document.getElementById('site-hero-title').value;
-                currentData.site.hero.subtitle = document.getElementById('site-hero-subtitle').value;
-                currentData.site.contact.phone = document.getElementById('site-contact-phone').value;
+                currentData.pt.site.hero.title = document.getElementById('site-hero-title-pt').value;
+                currentData.pt.site.hero.subtitle = document.getElementById('site-hero-subtitle-pt').value;
+                currentData.en.site.hero.title = document.getElementById('site-hero-title-en').value;
+                currentData.en.site.hero.subtitle = document.getElementById('site-hero-subtitle-en').value;
+                currentData.pt.site.contact.phone = document.getElementById('site-contact-phone-pt').value;
+                currentData.en.site.contact.phone = document.getElementById('site-contact-phone-en').value;
 
-                // 1. Get current file SHA
                 const getFile = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
                     headers: { 'Authorization': `token ${token}` }
                 });
                 const fileData = await getFile.json();
                 const sha = fileData.sha;
 
-                // 2. Push Update
                 const updatedContent = btoa(unescape(encodeURIComponent(JSON.stringify(currentData, null, 2))));
                 
                 const putFile = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
@@ -191,7 +221,7 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        message: "Atualização de conteúdo via Admin",
+                        message: "Atualização de conteúdo via Admin Panel - " + new Date().toISOString(),
                         content: updatedContent,
                         sha: sha
                     })
@@ -199,15 +229,15 @@
 
                 if (putFile.ok) {
                     status.innerText = "Sucesso! O site será atualizado em instantes no GitHub Pages.";
-                    status.style.color = "green";
+                    status.style.color = "#22c55e";
                 } else {
                     const err = await putFile.json();
                     status.innerText = "Erro no Deploy: " + err.message;
-                    status.style.color = "red";
+                    status.style.color = "#9b1c1c";
                 }
             } catch (err) {
                 status.innerText = "Erro técnico: " + err.message;
-                status.style.color = "red";
+                status.style.color = "#9b1c1c";
             }
         });
     </script>
